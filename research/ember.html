@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hidden Reliability Failures in Malware Detection — Tara Dixit</title>
+
+  <meta
+    name="description"
+    content="An empirical evaluation of family-conditioned reliability in the EMBER2024 malware detector."
+  >
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="project-page">
+
+  <header class="project-hero">
+
+    <nav class="project-nav">
+      <a href="../index.html">← Tara Dixit</a>
+    </nav>
+
+    <p class="eyebrow">
+      Research Project · 2026
+    </p>
+
+    <h1>Hidden Reliability Failures in Malware Detection</h1>
+
+    <p class="project-dek">
+      When near-perfect aggregate calibration conceals severe
+      family-level failures.
+    </p>
+
+  </header>
+
+
+  <main>
+
+    <section class="project-section">
+      <h2>TL;DR</h2>
+
+      <p class="project-lead">
+        The released EMBER2024 LightGBM malware detector looks extremely
+        reliable in aggregate: across 1.08 million Windows PE files, it
+        achieves 98.0% accuracy, 0.998 AUC, and an Expected Calibration
+        Error of just 0.0031.
+      </p>
+
+      <p>
+        But aggregate performance hides a very different story. When I
+        evaluated reliability separately across malware families, I found
+        families with dramatically higher calibration error and false-negative
+        rates. For <em>malicord</em>, the detector missed 85.2% of malicious
+        samples and had an ECE of 0.602.
+      </p>
+    </section>
+
+
+    <section class="project-section">
+      <h2>Research Question</h2>
+
+      <p>
+        Is a malware detector that is well calibrated overall also reliable
+        across individual malware families?
+      </p>
+
+      <p>
+        This matters because confidence scores can influence which alerts
+        security analysts investigate. A detector can therefore look highly
+        trustworthy according to aggregate metrics while still giving
+        misleading confidence on specific populations of malware.
+      </p>
+    </section>
+
+
+    <section class="project-section">
+      <h2>Overall Performance</h2>
+
+      <div class="metric-grid">
+
+        <div class="metric">
+          <span class="metric-value">98.0%</span>
+          <span class="metric-label">Accuracy</span>
+        </div>
+
+        <div class="metric">
+          <span class="metric-value">0.998</span>
+          <span class="metric-label">AUC</span>
+        </div>
+
+        <div class="metric">
+          <span class="metric-value">0.015</span>
+          <span class="metric-label">Brier score</span>
+        </div>
+
+        <div class="metric">
+          <span class="metric-value">0.0031</span>
+          <span class="metric-label">Overall ECE</span>
+        </div>
+
+      </div>
+
+      <p>
+        My initial hypothesis was that the released detector would show
+        meaningful global miscalibration.
+      </p>
+
+      <p>
+        It did not.
+      </p>
+
+      <p>
+        The reliability curve remained close to the ideal diagonal, and the
+        maximum calibration error across confidence bins was approximately
+        0.028. If the analysis had stopped here, the natural conclusion would
+        have been that the model's confidence scores were highly reliable.
+      </p>
+    </section>
+
+
+    <section class="project-section">
+      <h2>What the Aggregate Metric Hid</h2>
+
+      <p>
+        I then repeated the reliability analysis separately for malware
+        families with at least 100 labeled samples.
+      </p>
+
+      <div class="table-wrapper">
+
+        <table>
+          <thead>
+            <tr>
+              <th>Malware family</th>
+              <th>Samples</th>
+              <th>ECE</th>
+              <th>False-negative rate</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>malicord</td>
+              <td>324</td>
+              <td>0.602</td>
+              <td>85.2%</td>
+            </tr>
+
+            <tr>
+              <td>lazzzy</td>
+              <td>358</td>
+              <td>0.452</td>
+              <td>62.0%</td>
+            </tr>
+
+            <tr>
+              <td>rugmi</td>
+              <td>512</td>
+              <td>0.447</td>
+              <td>61.7%</td>
+            </tr>
+
+            <tr>
+              <td>offercore</td>
+              <td>136</td>
+              <td>0.410</td>
+              <td>54.4%</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <p>
+        The strongest example was <em>malicord</em>. Despite the detector's
+        excellent aggregate performance, it classified approximately 85% of
+        samples from this malicious family as benign.
+      </p>
+
+      <p>
+        Family size explained only part of the variation. The correlation
+        between family size and ECE was approximately −0.182, suggesting that
+        smaller families tended somewhat toward higher error but that sample
+        frequency alone did not explain the failures.
+      </p>
+    </section>
+
+
+    <section class="project-section">
+      <h2>Failure Analysis</h2>
+
+      <p>
+        To investigate the high-error families, I used SHAP to examine how
+        EMBER's static PE features influenced individual predictions.
+      </p>
+
+      <p>
+        For some poorly detected families, features such as byte entropy and
+        string statistics did not provide strong evidence pushing predictions
+        toward the malicious class. This suggests that the problem may extend
+        beyond assigning the wrong probability to an otherwise-correct
+        representation: the detector may lack sufficiently discriminative
+        feature evidence for some families.
+      </p>
+
+      <p>
+        This is an important distinction. Post-hoc recalibration can adjust
+        confidence estimates, but it cannot necessarily repair a model that
+        fails to recognize the underlying samples.
+      </p>
+    </section>
+
+
+    <section class="project-section">
+      <h2>What Surprised Me</h2>
+
+      <p>
+        The most interesting part of the project was that my original
+        hypothesis was wrong.
+      </p>
+
+      <p>
+        I expected to find obvious global calibration problems. Instead, the
+        aggregate detector looked exceptionally reliable. The useful result
+        emerged only after asking whether that aggregate metric was hiding
+        conditional failures.
+      </p>
+
+      <p>
+        That changed the project from a calibration check into a broader
+        question about when aggregate security metrics are sufficient evidence
+        for trusting a system.
+      </p>
+    </section>
+
+
+    <section class="project-section">
+      <h2>Why It Matters</h2>
+
+      <p>
+        Security teams operate under limited analyst attention. If confidence
+        scores influence which files are investigated, a confidently benign
+        prediction can be especially consequential when it is wrong.
+      </p>
+
+      <p>
+        Aggregate calibration therefore does not guarantee that a detector
+        provides equally useful confidence estimates across the malware
+        populations an organization may encounter.
+      </p>
+    </section>
+
+
+    <section class="project-section">
+      <h2>Method</h2>
+
+      <p>
+        I evaluated the publicly released EMBER2024 PE LightGBM benchmark
+        model without retraining it.
+      </p>
+
+      <ul>
+        <li>1,080,000 Windows PE test samples</li>
+        <li>540,000 benign and 540,000 malicious samples</li>
+        <li>2,568 static features per file</li>
+        <li>464,734 malicious samples with usable malware-family labels</li>
+        <li>Family analysis restricted to families with at least 100 samples</li>
+        <li>15 confidence bins for calibration analysis</li>
+      </ul>
+
+      <p>
+        Metrics included accuracy, AUC, Brier score, Expected Calibration
+        Error, Maximum Calibration Error, false-negative rate, family-conditioned
+        calibration, and SHAP-based feature analysis.
+      </p>
+    </section>
+
+
+    <section class="project-section">
+      <h2>Limitations</h2>
+
+      <p>
+        Malware-family labels are only available for malicious samples, so the
+        same family-conditioned analysis cannot be performed for benign files.
+      </p>
+
+      <p>
+        ECE is also sensitive to subgroup sample size. Restricting the analysis
+        to families with at least 100 samples reduces this problem but does not
+        eliminate it.
+      </p>
+
+      <p>
+        Finally, SHAP identifies features associated with model predictions but
+        does not establish that those features caused the observed reliability
+        failures. Additional intervention experiments would be necessary to
+        determine whether recalibration, different features, or different
+        training data actually repair these failures.
+      </p>
+    </section>
+
+
+    <section class="project-section">
+      <h2>Next</h2>
+
+      <p>
+        I am extending the analysis with uncertainty estimates, family-size
+        controls, and experiments testing whether conventional recalibration
+        actually fixes the populations with the largest reliability failures.
+      </p>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <p>
+      <a href="../index.html">← Back to home</a>
+    </p>
+  </footer>
+
+</body>
+
+</html>
