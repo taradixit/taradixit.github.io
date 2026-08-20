@@ -1,61 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Tara Dixit</title>
+
+  <meta
+    name="description"
+    content="Tara Dixit — Stanford computer science student working on AI security, empirical security, and security engineering."
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <h1>Tara Dixit</h1>
+  <header>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#research">Research</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <p>Stanford CS · AI Security + Empirical Security</p>
+    <h1>Tara Dixit</h1>
 
-  <p>
-    I study how security systems and measurements behave under the
-    conditions where their assumptions break down.
-  </p>
+    <p class="subtitle">
+      Stanford CS · AI Security + Empirical Security
+    </p>
 
-  <p>
-    <a href="#">GitHub</a>
-    ·
-    <a href="#">LinkedIn</a>
-    ·
-    <a href="#">Email</a>
-    ·
-    <a href="#">CV</a>
-  </p>
+    <p class="intro">
+      I study whether security systems and measurements that appear
+      reliable remain reliable under the conditions where they actually matter.
+      My work spans AI security, malware-model reliability, vulnerability
+      intelligence, and enterprise security.
+    </p>
 
-  <hr>
+    <p class="links">
+      <a href="https://github.com/taradixit">GitHub</a>
+      <span>·</span>
+      <a href="#">LinkedIn</a>
+      <span>·</span>
+      <a href="#">Email</a>
+      <span>·</span>
+      <a href="#">CV</a>
+    </p>
+  </header>
 
-  <h2>Selected Work</h2>
 
-  <h3>ContainmentBench</h3>
-  <p>
-    Evaluating security controls for autonomous coding agents across
-    benign and adversarial multi-step tasks.
-  </p>
+  <main>
 
-  <h3>Hidden Reliability Failures in Malware Detection</h3>
-  <p>
-    Studying how strong aggregate performance can conceal severe
-    family-level failures in malware detection.
-  </p>
+    <section id="work">
+      <h2>Selected Work</h2>
 
-  <h3>Inferring Vulnerability Attributes from CVE Descriptions</h3>
-  <p>
-    Evaluating when models can recover structured vulnerability
-    information from unstructured CVE descriptions.
-  </p>
+      <article class="project">
+        <div class="project-heading">
+          <h3>ContainmentBench</h3>
+          <span class="status">In progress</span>
+        </div>
 
-  <h3>Compliance Reality Checker</h3>
-  <p>
-    Testing whether security controls that appear configured are
-    actually enforced in practice.
-  </p>
+        <p>
+          Building an evaluation platform for studying whether security
+          controls can contain autonomous coding agents across benign and
+          adversarial multi-step tasks.
+        </p>
+
+        <p class="project-links">
+          <a href="#">Project</a>
+          <a href="#">Code</a>
+        </p>
+      </article>
+
+
+      <article class="project">
+        <h3>Hidden Reliability Failures in Malware Detection</h3>
+
+        <p>
+          Evaluated whether strong aggregate performance in malware detection
+          can conceal severe reliability failures for particular malware
+          families, using the EMBER2024 benchmark detector.
+        </p>
+
+        <p class="project-links">
+          <a href="#">Project</a>
+          <a href="#">Code</a>
+          <a href="#">Report</a>
+        </p>
+      </article>
+
+
+      <article class="project">
+        <h3>Inferring Vulnerability Attributes from CVE Descriptions</h3>
+
+        <p>
+          Studying when models can recover structured vulnerability
+          information from raw CVE descriptions, and where lexical shortcuts,
+          class imbalance, and missing evidence cause them to fail.
+        </p>
+
+        <p class="project-links">
+          <a href="#">Project</a>
+          <a href="#">Code</a>
+          <a href="#">Report</a>
+        </p>
+      </article>
+
+
+      <article class="project">
+        <h3>Compliance Reality Checker</h3>
+
+        <p>
+          Built security checks for Linux and Microsoft 365 that distinguish
+          controls that appear configured from controls that are actually
+          enforced, incorporating account-level configuration and runtime
+          signals.
+        </p>
+
+        <p class="project-links">
+          <a href="#">Project</a>
+          <a href="#">Code</a>
+        </p>
+      </article>
+    </section>
+
+
+    <section id="research">
+      <h2>Research</h2>
+
+      <article class="research-item">
+        <h3>Enterprise Security Guidance</h3>
+
+        <p>
+          Research with the Stanford Empirical Security Research Group studying
+          how governments communicate enterprise-security recommendations and
+          how those recommendations differ across countries.
+        </p>
+
+        <p class="meta">
+          Research contributor · Stanford University
+        </p>
+      </article>
+
+
+      <article class="research-item">
+        <h3>Security Incident Reporting</h3>
+
+        <p>
+          Research on whether widely used incident reports provide sufficiently
+          consistent evidence for understanding how organizational security
+          incidents occur and how defenders should prioritize security
+          investments.
+        </p>
+
+        <p class="meta">
+          Stanford University · manuscript under review
+        </p>
+      </article>
+    </section>
+
+
+    <section id="about">
+      <h2>About</h2>
+
+      <p>
+        I'm a computer science student at Stanford interested in empirical
+        security and AI security. A recurring question in my work is whether
+        the signals we trust — model confidence, security guidance, compliance
+        checks, or system safeguards — actually correspond to security under
+        the conditions where they matter.
+      </p>
+
+      <p>
+        I especially enjoy projects where the obvious metric says everything
+        is working and the interesting part begins when you ask what that metric
+        is hiding.
+      </p>
+    </section>
+
+
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <p>
+        I'm always interested in conversations about AI security, empirical
+        security, security engineering, and model evaluation.
+      </p>
+
+      <p>
+        <a href="#">Email me</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Tara Dixit</p>
+  </footer>
 
 </body>
+
 </html>
