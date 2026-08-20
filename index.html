@@ -9,7 +9,7 @@
 
   <meta
     name="description"
-    content="Tara Dixit — Stanford computer science student working on AI security, empirical security, and security engineering."
+    content="Tara Dixit — Stanford computer science student working on AI security and empirical security."
   >
 
   <link rel="stylesheet" href="style.css">
@@ -21,24 +21,33 @@
   <header>
 
     <nav>
-      <a href="#work">Work</a>
       <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact">Contact!</a>
     </nav>
 
 
-    <h1>Tara Dixit</h1>
+    <h1>
+      Tara Dixit<span class="accent-mark">.</span>
+    </h1>
+
 
     <p class="subtitle">
       Stanford CS · AI Security &amp; Empirical Security
     </p>
 
+
     <p class="intro">
-      I'm interested in whether security systems and the signals we trust
-      actually remain reliable under the conditions where they matter.
-      My work spans AI security, empirical security, model reliability,
-      vulnerability intelligence, and security engineering.
+      Hi, I'm Tara. I'm a CS student at Stanford interested in security,
+      especially the gap between what a system looks like on paper and what
+      happens when you test it more closely.
+    </p>
+
+
+    <p class="intro-secondary">
+      Lately I've been working on malware-model reliability, vulnerability
+      intelligence, enterprise security, and security for autonomous AI systems.
     </p>
 
 
@@ -80,12 +89,12 @@
 
 
     <!-- =====================================================
-         SELECTED WORK
+         RESEARCH
          ===================================================== -->
 
-    <section id="work">
+    <section id="research">
 
-      <h2>Selected Work</h2>
+      <h2>Research</h2>
 
 
       <article class="project">
@@ -96,10 +105,11 @@
         </div>
 
         <p>
-          Building an evaluation environment for studying whether
-          deterministic isolation and trajectory-aware security controls
-          can contain autonomous coding agents exposed to untrusted
-          instructions across multi-step tasks.
+          I'm building an evaluation environment for testing whether security
+          controls can contain autonomous coding agents across benign and
+          adversarial multi-step tasks. I'm especially interested in where
+          pointwise controls break down once behavior unfolds over a longer
+          trajectory.
         </p>
 
       </article>
@@ -111,10 +121,11 @@
         <h3>Hidden Reliability Failures in Malware Detection</h3>
 
         <p>
-          Evaluated the released EMBER2024 detector across 1.08M Windows PE
-          files. Despite 98.0% aggregate accuracy and 0.0031 ECE,
-          family-conditioned analysis uncovered malware families with
-          greater than 0.60 ECE and greater than 80% false-negative rates.
+          I evaluated the released EMBER2024 malware detector across 1.08
+          million Windows PE files. Overall, it looked excellent: 98.0%
+          accuracy and an ECE of 0.0031. Looking by malware family told a
+          different story, including families with false-negative rates above
+          80%.
         </p>
 
       </article>
@@ -123,15 +134,14 @@
 
       <article class="project">
 
-        <h3>Inferring Vulnerability Attributes from CVE Descriptions</h3>
+        <h3>Predicting Vulnerability Attributes from CVE Descriptions</h3>
 
         <p>
-          Built a temporal benchmark for predicting CVSS, CWE, severity,
-          and CVSS-vector components from vulnerability descriptions.
-          On 36K+ held-out 2024 CVEs, simple TF-IDF baselines outperformed
-          zero-shot 70B+ language models on severity and CWE prediction,
-          while exposing large failures on rare classes and attributes
-          requiring implicit inference.
+          I'm studying how much structured vulnerability information can be
+          recovered from the CVE description alone. On held-out 2024 CVEs,
+          simple TF-IDF baselines beat zero-shot 70B+ language models on
+          severity and CWE prediction, while rare labels and attributes that
+          required more implicit inference remained much harder.
         </p>
 
       </article>
@@ -143,10 +153,9 @@
         <h3>Compliance Reality Checker</h3>
 
         <p>
-          Built Linux and Microsoft 365 security checks that distinguish
-          controls that appear configured from controls that are actually
-          enforced, incorporating global policy, account-level exceptions,
-          and runtime state.
+          Security controls can look enabled without actually being enforced.
+          I built checks for Linux and Microsoft 365 that compare global policy
+          with account-level exceptions and runtime state.
         </p>
 
       </article>
@@ -156,45 +165,85 @@
 
 
     <!-- =====================================================
-         RESEARCH & WRITING
+         PUBLICATIONS
          ===================================================== -->
 
-    <section id="research">
+    <section id="publications">
 
-      <h2>Research &amp; Writing</h2>
+      <h2>Publications</h2>
 
 
-      <article class="research-item">
+      <article class="publication">
 
-        <h3>A First Look at Governments' Enterprise Security Guidance</h3>
+        <h3>Investigating Usefulness of Security Threat Reports</h3>
 
-        <p>
-          Contributed to a Stanford Empirical Security Research Group study
-          of government enterprise-security guidance spanning 41 countries.
-          Among ten deeply analyzed frameworks, only 2 of 166 observed
-          controls were universally recommended, with substantial disagreement
-          even among close security allies.
+        <p class="publication-meta">
+          Manuscript under review
         </p>
 
-        <p class="meta">
-          Research contributor · Stanford Empirical Security Research Group
+        <p>
+          We studied incident reports from DFIR firms and cyberinsurers to ask
+          how much defenders can actually learn by comparing them. Even basic
+          estimates of common initial-access vectors and exploited
+          vulnerabilities often disagreed enough to make simple conclusions
+          surprisingly difficult to justify.
         </p>
 
       </article>
 
 
 
-      <article class="research-item">
+      <article class="publication">
+
+        <h3>A First Look at Governments’ Enterprise Security Guidance</h3>
+
+        <p class="publication-meta">
+          USENIX Security '25 · August 2025 · Research contributor
+        </p>
+
+        <p>
+          A systematic study of government enterprise-security guidance across
+          41 countries. Among ten frameworks examined in depth, only 2 of 166
+          observed security controls were universally recommended.
+        </p>
+
+        <p class="contribution-note">
+          I contributed to the research and writing and am acknowledged in the
+          paper; I am not a listed author.
+        </p>
+
+        <p class="project-links">
+          <a
+            href="assets/government-guidance.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Paper</a>
+        </p>
+
+      </article>
+
+
+
+      <article class="publication">
 
         <h3>Privacy and Paternalism: The Ethics of Student Data Collection</h3>
 
-        <p>
-          Examined the privacy and governance trade-offs involved in
-          institutional collection and use of student data.
+        <p class="publication-meta">
+          MIT SERC · August 2022
         </p>
 
-        <p class="meta">
-          MIT Schwarzman College of Computing · 2022
+        <p>
+          A case study on student surveillance and educational technology,
+          focused on the tension between protecting students and respecting
+          their privacy and autonomy.
+        </p>
+
+        <p class="project-links">
+          <a
+            href="https://mit-serc.pubpub.org/pub/privacy-and-paternalism/release/2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Paper</a>
         </p>
 
       </article>
@@ -212,17 +261,15 @@
       <h2>About</h2>
 
       <p>
-        I'm a computer science student at Stanford working across empirical
-        security and AI security. A recurring question in my work is whether
-        the signals we rely on — model confidence, security guidance,
-        compliance checks, or system safeguards — actually correspond to
-        security when their assumptions are stressed.
+        I'm a Stanford CS student interested in empirical security and AI
+        security. I tend to like problems where the first result looks
+        reassuring and things get more interesting once you start testing the
+        assumptions behind it.
       </p>
 
       <p>
-        I especially like projects where the aggregate result initially says
-        everything is working and the interesting part begins when you ask
-        what that result might be hiding.
+        This site is mostly a place to keep the research and projects I'm
+        excited about in one spot.
       </p>
 
     </section>
@@ -235,14 +282,14 @@
 
     <section id="contact">
 
-      <h2>Contact</h2>
+      <h2>Contact!</h2>
 
       <p>
-        I'm always interested in conversations about AI security, empirical
-        security, security engineering, and model evaluation.
+        If any of this overlaps with what you're working on, or you just want
+        to talk about an interesting security problem, say hi!
       </p>
 
-      <p>
+      <p class="contact-email">
         <a href="mailto:tdixit@stanford.edu">tdixit@stanford.edu</a>
       </p>
 
