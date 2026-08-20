@@ -15,15 +15,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
   <header>
+
     <nav>
       <a href="#work">Work</a>
       <a href="#research">Research</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
+
 
     <h1>Tara Dixit</h1>
 
@@ -32,13 +35,15 @@
     </p>
 
     <p class="intro">
-      I study whether security systems and measurements that appear
-      reliable remain reliable under the conditions where they actually matter.
-      My work spans AI security, malware-model reliability, vulnerability
-      intelligence, and enterprise security.
+      I'm interested in whether security systems and the signals we trust
+      actually remain reliable under the conditions where they matter.
+      My work spans AI security, empirical security, model reliability,
+      vulnerability intelligence, and security engineering.
     </p>
 
+
     <p class="links">
+
       <a
         href="https://github.com/taradixit"
         target="_blank"
@@ -64,141 +69,172 @@
         target="_blank"
         rel="noopener noreferrer"
       >CV</a>
+
     </p>
+
   </header>
+
 
 
   <main>
 
+
+    <!-- =====================================================
+         SELECTED WORK
+         ===================================================== -->
+
     <section id="work">
+
       <h2>Selected Work</h2>
 
+
       <article class="project">
+
         <div class="project-heading">
           <h3>ContainmentBench</h3>
           <span class="status">In progress</span>
         </div>
 
         <p>
-          Building an evaluation platform for studying whether security
-          controls can contain autonomous coding agents across benign and
-          adversarial multi-step tasks.
+          Building an evaluation environment for studying whether
+          deterministic isolation and trajectory-aware security controls
+          can contain autonomous coding agents exposed to untrusted
+          instructions across multi-step tasks.
         </p>
 
-        <p class="project-links">
-          <a href="#">Project</a>
-          <a href="#">Code</a>
-        </p>
       </article>
 
 
+
       <article class="project">
+
         <h3>Hidden Reliability Failures in Malware Detection</h3>
 
         <p>
-          Evaluated whether strong aggregate performance in malware detection
-          can conceal severe reliability failures for particular malware
-          families, using the EMBER2024 benchmark detector.
+          Evaluated the released EMBER2024 detector across 1.08M Windows PE
+          files. Despite 98.0% aggregate accuracy and 0.0031 ECE,
+          family-conditioned analysis uncovered malware families with
+          greater than 0.60 ECE and greater than 80% false-negative rates.
         </p>
 
-        <p class="project-links">
-          <a href="#">Project</a>
-          <a href="#">Code</a>
-          <a href="#">Report</a>
-        </p>
       </article>
 
 
+
       <article class="project">
+
         <h3>Inferring Vulnerability Attributes from CVE Descriptions</h3>
 
         <p>
-          Studying when models can recover structured vulnerability
-          information from raw CVE descriptions, and where lexical shortcuts,
-          class imbalance, and missing evidence cause them to fail.
+          Built a temporal benchmark for predicting CVSS, CWE, severity,
+          and CVSS-vector components from vulnerability descriptions.
+          On 36K+ held-out 2024 CVEs, simple TF-IDF baselines outperformed
+          zero-shot 70B+ language models on severity and CWE prediction,
+          while exposing large failures on rare classes and attributes
+          requiring implicit inference.
         </p>
 
-        <p class="project-links">
-          <a href="#">Project</a>
-          <a href="#">Code</a>
-          <a href="#">Report</a>
-        </p>
       </article>
+
 
 
       <article class="project">
+
         <h3>Compliance Reality Checker</h3>
 
         <p>
-          Built security checks for Linux and Microsoft 365 that distinguish
+          Built Linux and Microsoft 365 security checks that distinguish
           controls that appear configured from controls that are actually
-          enforced, incorporating account-level configuration and runtime
-          signals.
+          enforced, incorporating global policy, account-level exceptions,
+          and runtime state.
         </p>
 
-        <p class="project-links">
-          <a href="#">Project</a>
-          <a href="#">Code</a>
-        </p>
       </article>
+
     </section>
 
+
+
+    <!-- =====================================================
+         RESEARCH & WRITING
+         ===================================================== -->
 
     <section id="research">
-      <h2>Research</h2>
 
-      <article class="research-item">
-        <h3>Enterprise Security Guidance</h3>
-
-        <p>
-          Research with the Stanford Empirical Security Research Group studying
-          how governments communicate enterprise-security recommendations and
-          how those recommendations differ across countries.
-        </p>
-
-        <p class="meta">
-          Research contributor · Stanford University
-        </p>
-      </article>
+      <h2>Research &amp; Writing</h2>
 
 
       <article class="research-item">
-        <h3>Security Incident Reporting</h3>
+
+        <h3>A First Look at Governments' Enterprise Security Guidance</h3>
 
         <p>
-          Research on whether widely used incident reports provide sufficiently
-          consistent evidence for understanding how organizational security
-          incidents occur and how defenders should prioritize security
-          investments.
+          Contributed to a Stanford Empirical Security Research Group study
+          of government enterprise-security guidance spanning 41 countries.
+          Among ten deeply analyzed frameworks, only 2 of 166 observed
+          controls were universally recommended, with substantial disagreement
+          even among close security allies.
         </p>
 
         <p class="meta">
-          Stanford University · manuscript under review
+          Research contributor · Stanford Empirical Security Research Group
         </p>
+
       </article>
+
+
+
+      <article class="research-item">
+
+        <h3>Privacy and Paternalism: The Ethics of Student Data Collection</h3>
+
+        <p>
+          Examined the privacy and governance trade-offs involved in
+          institutional collection and use of student data.
+        </p>
+
+        <p class="meta">
+          MIT Schwarzman College of Computing · 2022
+        </p>
+
+      </article>
+
     </section>
 
 
+
+    <!-- =====================================================
+         ABOUT
+         ===================================================== -->
+
     <section id="about">
+
       <h2>About</h2>
 
       <p>
-        I'm a computer science student at Stanford interested in empirical
+        I'm a computer science student at Stanford working across empirical
         security and AI security. A recurring question in my work is whether
-        the signals we trust — model confidence, security guidance, compliance
-        checks, or system safeguards — actually correspond to security under
-        the conditions where they matter.
+        the signals we rely on — model confidence, security guidance,
+        compliance checks, or system safeguards — actually correspond to
+        security when their assumptions are stressed.
       </p>
 
       <p>
-        I especially enjoy projects where the obvious metric says everything
-        is working and the interesting part begins when you ask what that metric
-        is hiding.
+        I especially like projects where the aggregate result initially says
+        everything is working and the interesting part begins when you ask
+        what that result might be hiding.
       </p>
+
     </section>
 
 
+
+    <!-- =====================================================
+         CONTACT
+         ===================================================== -->
+
     <section id="contact">
+
       <h2>Contact</h2>
 
       <p>
@@ -209,14 +245,18 @@
       <p>
         <a href="mailto:tdixit@stanford.edu">tdixit@stanford.edu</a>
       </p>
+
     </section>
 
+
   </main>
+
 
 
   <footer>
     <p>© 2026 Tara Dixit</p>
   </footer>
+
 
 </body>
 
