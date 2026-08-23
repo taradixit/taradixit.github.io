@@ -12,7 +12,7 @@
     content="Tara Dixit — Stanford computer science student working on AI security and empirical security."
   >
 
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=13">
 </head>
 
 <body>
@@ -85,6 +85,13 @@
         autonomous AI systems.
       </p>
 
+
+      <p class="currently">
+        <span>Currently →</span>
+        building ContainmentBench to study security controls for autonomous
+        coding agents.
+      </p>
+
     </header>
 
 
@@ -98,15 +105,27 @@
 
       <section id="research">
 
-        <h2>Research</h2>
+        <div class="section-heading">
+          <h2>Research</h2>
+          <p>What happens when the reassuring result isn't the whole story?</p>
+        </div>
 
+
+        <!-- CONTAINMENTBENCH -->
 
         <article class="entry">
 
-          <div class="entry-heading">
-            <h3>ContainmentBench</h3>
+          <div class="entry-top">
+
+            <div>
+              <p class="category">AI Security</p>
+              <h3>ContainmentBench</h3>
+            </div>
+
             <span class="status">In progress</span>
+
           </div>
+
 
           <p>
             I started building an evaluation environment for testing whether
@@ -116,11 +135,28 @@
             unsafe when they add up over a longer trajectory.
           </p>
 
+
+          <div class="research-signal question-signal">
+
+            <div>
+              <span class="signal-label">Question</span>
+              <span class="signal-text">
+                Are individually safe actions still safe when an agent combines
+                them across a longer trajectory?
+              </span>
+            </div>
+
+          </div>
+
         </article>
 
 
 
+        <!-- EMBER -->
+
         <article class="entry">
+
+          <p class="category">Empirical Security · Model Reliability</p>
 
           <h3>Hidden Reliability Failures in Malware Detection</h3>
 
@@ -132,11 +168,36 @@
             how strong aggregate metrics can hide concentrated security failures.
           </p>
 
+
+          <div class="research-signal">
+
+            <div>
+              <span class="signal-label">Expected</span>
+              <span class="signal-text">
+                98.0% accuracy · 0.0031 overall ECE
+              </span>
+            </div>
+
+            <div class="signal-divider"></div>
+
+            <div>
+              <span class="signal-label signal-found">Found</span>
+              <span class="signal-text">
+                85.2% false-negative rate for one malware family
+              </span>
+            </div>
+
+          </div>
+
         </article>
 
 
 
+        <!-- CVE -->
+
         <article class="entry">
+
+          <p class="category">Vulnerability Intelligence · ML</p>
 
           <h3>Predicting Vulnerability Attributes from CVE Descriptions</h3>
 
@@ -157,11 +218,36 @@
             models were not automatically better at this task.
           </p>
 
+
+          <div class="research-signal">
+
+            <div>
+              <span class="signal-label">Expected</span>
+              <span class="signal-text">
+                70B+ language models should have the advantage
+              </span>
+            </div>
+
+            <div class="signal-divider"></div>
+
+            <div>
+              <span class="signal-label signal-found">Found</span>
+              <span class="signal-text">
+                TF-IDF beat zero-shot 70B+ models on severity and CWE
+              </span>
+            </div>
+
+          </div>
+
         </article>
 
 
 
+        <!-- COMPLIANCE -->
+
         <article class="entry">
+
+          <p class="category">Security Engineering</p>
 
           <h3>Compliance Reality Checker</h3>
 
@@ -172,6 +258,27 @@
             configuration level but was not actually enforced for every user
             or system.
           </p>
+
+
+          <div class="research-signal">
+
+            <div>
+              <span class="signal-label">Looks secure</span>
+              <span class="signal-text">
+                Control is configured
+              </span>
+            </div>
+
+            <div class="signal-divider"></div>
+
+            <div>
+              <span class="signal-label signal-found">Reality</span>
+              <span class="signal-text">
+                Configured ≠ enforced
+              </span>
+            </div>
+
+          </div>
 
         </article>
 
@@ -185,10 +292,16 @@
 
       <section id="publications">
 
-        <h2>Publications</h2>
+        <div class="section-heading">
+          <h2>Publications</h2>
+        </div>
 
 
-        <article class="entry">
+        <!-- INDUSTRY REPORTS -->
+
+        <article class="entry publication-entry">
+
+          <p class="category">Empirical Security</p>
 
           <h3>Investigating Usefulness of Security Threat Reports</h3>
 
@@ -206,11 +319,36 @@
             tell which numbers were trustworthy.
           </p>
 
+
+          <div class="research-signal publication-signal">
+
+            <div>
+              <span class="signal-label">Expected</span>
+              <span class="signal-text">
+                Major incident reports should converge on basic threat trends
+              </span>
+            </div>
+
+            <div class="signal-divider"></div>
+
+            <div>
+              <span class="signal-label signal-found">Found</span>
+              <span class="signal-text">
+                No CVE appeared in all five comparable most-exploited lists
+              </span>
+            </div>
+
+          </div>
+
         </article>
 
 
 
-        <article class="entry">
+        <!-- GOVERNMENT GUIDANCE -->
+
+        <article class="entry publication-entry">
+
+          <p class="category">Empirical Security</p>
 
           <h3>A First Look at Governments’ Enterprise Security Guidance</h3>
 
@@ -227,6 +365,28 @@
             backed by empirical evidence?
           </p>
 
+
+          <div class="research-signal publication-signal">
+
+            <div>
+              <span class="signal-label">Expected</span>
+              <span class="signal-text">
+                Security “best practices” should broadly agree
+              </span>
+            </div>
+
+            <div class="signal-divider"></div>
+
+            <div>
+              <span class="signal-label signal-found">Found</span>
+              <span class="signal-text">
+                Only 2 of 166 observed controls were universal
+              </span>
+            </div>
+
+          </div>
+
+
           <p class="entry-links">
             <a
               href="assets/government-guidance.pdf"
@@ -239,7 +399,11 @@
 
 
 
-        <article class="entry">
+        <!-- PRIVACY -->
+
+        <article class="entry publication-entry">
+
+          <p class="category">Privacy · Technology Ethics</p>
 
           <h3>Privacy and Paternalism: The Ethics of Student Data Collection</h3>
 
@@ -253,6 +417,7 @@
             data collection becomes too intrusive, especially when students
             have little control over how their data is collected or used.
           </p>
+
 
           <p class="entry-links">
             <a
