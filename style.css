@@ -6,14 +6,15 @@
 
   --text: #343034;
   --heading: #252225;
-  --muted: #746e72;
+  --muted: #756e73;
 
   --magenta: #b30d65;
-  --magenta-dark: #85094b;
-  --magenta-soft: #f6e1ec;
+  --magenta-dark: #830849;
+  --magenta-soft: #f8e5ef;
+  --magenta-softer: #fcf4f8;
 
-  --border: #ddd5d9;
-  --dash: #aaa2a7;
+  --border: #ded6da;
+  --dash: #aaa3a7;
 
   --page-width: 1120px;
 }
@@ -83,7 +84,7 @@ a:hover {
    ========================================================= */
 
 header {
-  padding-bottom: 54px;
+  padding-bottom: 52px;
 
   border-bottom: 1px solid var(--border);
 }
@@ -112,7 +113,7 @@ h1 {
 
 
 /* =========================================================
-   TOP NAVIGATION
+   NAVIGATION
    ========================================================= */
 
 nav {
@@ -132,9 +133,11 @@ nav a {
 
   font-weight: 500;
 
-  text-decoration: none;
-
   border-bottom: 1px solid transparent;
+
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 
@@ -155,7 +158,7 @@ nav a:hover {
 
   gap: 10px;
 
-  margin-top: 32px;
+  margin-top: 31px;
 
   font-size: 20px;
   line-height: 1.5;
@@ -174,11 +177,6 @@ nav a:hover {
 }
 
 
-.profile-links a:hover {
-  color: var(--magenta-dark);
-}
-
-
 /* =========================================================
    INTRO
    ========================================================= */
@@ -186,7 +184,7 @@ nav a:hover {
 .intro {
   max-width: 1000px;
 
-  margin: 30px 0 0;
+  margin: 29px 0 0;
 
   color: var(--heading);
 
@@ -197,12 +195,34 @@ nav a:hover {
 }
 
 
+.currently {
+  max-width: 900px;
+
+  margin: 25px 0 0;
+  padding-left: 17px;
+
+  border-left: 3px solid var(--magenta);
+
+  color: var(--muted);
+
+  font-size: 17.5px;
+  line-height: 1.65;
+}
+
+
+.currently span {
+  color: var(--magenta);
+
+  font-weight: 600;
+}
+
+
 /* =========================================================
    SECTIONS
    ========================================================= */
 
 section {
-  padding: 56px 0;
+  padding: 57px 0;
 
   border-bottom: 1px solid var(--border);
 
@@ -215,8 +235,19 @@ section:last-child {
 }
 
 
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  gap: 35px;
+
+  margin-bottom: 38px;
+}
+
+
 h2 {
-  margin: 0 0 37px;
+  margin: 0;
 
   color: var(--heading);
 
@@ -228,13 +259,27 @@ h2 {
 }
 
 
+.section-heading > p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  text-align: right;
+}
+
+
 /* =========================================================
    ENTRIES
    ========================================================= */
 
 .entry {
-  padding-bottom: 34px;
-  margin-bottom: 34px;
+  padding-bottom: 38px;
+  margin-bottom: 38px;
 
   border-bottom: 1px dashed var(--dash);
 }
@@ -248,8 +293,33 @@ h2 {
 }
 
 
+.entry-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+.category {
+  margin: 0 0 7px !important;
+
+  color: var(--magenta) !important;
+
+  font-size: 14.5px !important;
+  line-height: 1.4 !important;
+
+  font-weight: 600 !important;
+
+  letter-spacing: 0.02em;
+}
+
+
 h3 {
-  margin: 0 0 12px;
+  display: inline-block;
+
+  margin: 0 0 13px;
 
   color: var(--heading);
 
@@ -258,25 +328,24 @@ h3 {
 
   font-weight: 600;
   letter-spacing: -0.015em;
+
+  transition:
+    color 0.16s ease,
+    transform 0.16s ease;
 }
 
 
-.entry-heading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+.entry:hover h3 {
+  color: var(--magenta);
 
-  gap: 30px;
-}
-
-
-.entry-heading h3 {
-  margin-bottom: 12px;
+  transform: translateX(3px);
 }
 
 
 .status {
   flex-shrink: 0;
+
+  margin-top: 28px;
 
   color: var(--magenta);
 
@@ -287,7 +356,8 @@ h3 {
 }
 
 
-.entry p {
+.entry > p:not(.category):not(.meta):not(.entry-links),
+.entry-top + p {
   max-width: 1000px;
 
   margin: 0;
@@ -306,7 +376,7 @@ h3 {
    ========================================================= */
 
 .entry .meta {
-  margin: -1px 0 14px;
+  margin: -2px 0 14px;
 
   color: var(--magenta);
 
@@ -318,11 +388,92 @@ h3 {
 
 
 /* =========================================================
+   EXPECTED / FOUND SIGNAL
+   ========================================================= */
+
+.research-signal {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    1px
+    minmax(0, 1fr);
+
+  gap: 22px;
+
+  max-width: 950px;
+
+  margin-top: 24px;
+  padding: 17px 20px;
+
+  background: var(--magenta-softer);
+
+  border-left: 3px solid var(--magenta);
+}
+
+
+.research-signal > div:not(.signal-divider) {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.signal-divider {
+  width: 1px;
+
+  background: #ddcbd4;
+}
+
+
+.signal-label {
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.4;
+
+  font-weight: 600;
+}
+
+
+.signal-found {
+  color: var(--magenta);
+}
+
+
+.signal-text {
+  color: var(--heading);
+
+  font-size: 16.5px;
+  line-height: 1.55;
+
+  font-weight: 500;
+}
+
+
+.question-signal {
+  display: block;
+
+  max-width: 850px;
+}
+
+
+.question-signal > div {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: baseline;
+
+  gap: 13px !important;
+}
+
+
+/* =========================================================
    PAPER LINKS
    ========================================================= */
 
 .entry .entry-links {
-  margin-top: 16px;
+  margin: 16px 0 0;
 }
 
 
@@ -424,14 +575,31 @@ footer {
   }
 
 
+  .currently {
+    font-size: 16.5px;
+  }
+
+
   section {
     padding: 46px 0;
   }
 
 
-  h2 {
-    margin-bottom: 30px;
+  .section-heading {
+    display: block;
 
+    margin-bottom: 31px;
+  }
+
+
+  .section-heading > p {
+    margin-top: 8px;
+
+    text-align: left;
+  }
+
+
+  h2 {
     font-size: 31px;
   }
 
@@ -442,12 +610,12 @@ footer {
 
 
   .entry {
-    padding-bottom: 29px;
-    margin-bottom: 29px;
+    padding-bottom: 31px;
+    margin-bottom: 31px;
   }
 
 
-  .entry-heading {
+  .entry-top {
     display: block;
   }
 
@@ -455,13 +623,14 @@ footer {
   .status {
     display: block;
 
-    margin-bottom: 13px;
+    margin: -3px 0 15px;
 
     font-size: 17px;
   }
 
 
-  .entry p,
+  .entry > p:not(.category):not(.meta):not(.entry-links),
+  .entry-top + p,
   .contact-section p {
     font-size: 18px;
     line-height: 1.75;
@@ -469,6 +638,33 @@ footer {
 
 
   .entry .meta {
+    font-size: 16px;
+  }
+
+
+  .research-signal {
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+
+    padding: 15px 17px;
+  }
+
+
+  .signal-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+
+  .question-signal > div {
+    flex-direction: column !important;
+
+    gap: 3px !important;
+  }
+
+
+  .signal-text {
     font-size: 16px;
   }
 
