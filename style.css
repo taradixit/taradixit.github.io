@@ -99,11 +99,6 @@ a:hover {
 
 
 .site-title {
-  display: inline-flex;
-  align-items: center;
-
-  gap: 13px;
-
   color: var(--heading);
 
   font-size: 48px;
@@ -116,16 +111,6 @@ a:hover {
 
 .site-title:hover {
   color: var(--heading);
-}
-
-
-.site-mark {
-  display: inline-block;
-
-  width: 10px;
-  height: 10px;
-
-  background: var(--magenta);
 }
 
 
@@ -212,25 +197,13 @@ a:hover {
 
 
 /* =========================================================
-   HOME SECTIONS
+   HOME RESULTS
    ========================================================= */
 
 .home-section {
   padding: 60px 0;
 
   border-bottom: 1px solid var(--border);
-}
-
-
-.section-label {
-  margin: 0 0 8px;
-
-  color: var(--magenta);
-
-  font-size: 16px;
-  line-height: 1.4;
-
-  font-weight: 600;
 }
 
 
@@ -246,135 +219,6 @@ a:hover {
   letter-spacing: -0.025em;
 }
 
-
-
-/* =========================================================
-   FLAGSHIP
-   ========================================================= */
-
-.flagship-grid {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1.15fr)
-    minmax(310px, 0.85fr);
-
-  gap: 55px;
-
-  align-items: start;
-
-  margin-top: 34px;
-}
-
-
-.flagship-grid h2 {
-  margin: 0 0 13px;
-
-  color: var(--heading);
-
-  font-size: 26px;
-  line-height: 1.4;
-
-  font-weight: 600;
-}
-
-
-.flagship-grid p {
-  margin: 0;
-
-  font-size: 19px;
-  line-height: 1.78;
-}
-
-
-.technical-line {
-  margin-top: 15px !important;
-
-  color: var(--muted);
-
-  font-size: 16px !important;
-  line-height: 1.55 !important;
-
-  font-weight: 500;
-}
-
-
-
-/* =========================================================
-   QUESTION / RESULT BOX
-   ========================================================= */
-
-.signal-box {
-  position: relative;
-
-  padding: 20px 22px 20px 26px;
-
-  background: var(--surface);
-
-  border-left: 3px solid var(--magenta);
-}
-
-
-.signal-box::before,
-.signal-box::after {
-  content: "";
-
-  position: absolute;
-
-  left: -3px;
-
-  width: 14px;
-  height: 3px;
-
-  background: var(--magenta);
-}
-
-
-.signal-box::before {
-  top: 0;
-}
-
-
-.signal-box::after {
-  bottom: 0;
-}
-
-
-.signal-row + .signal-row {
-  margin-top: 17px;
-}
-
-
-.signal-label {
-  display: block;
-
-  margin-bottom: 4px;
-
-  color: var(--magenta);
-
-  font-size: 16px;
-  line-height: 1.4;
-
-  font-weight: 600;
-}
-
-
-.signal-text {
-  display: block;
-
-  color: var(--heading);
-
-  font-size: 17.5px;
-  line-height: 1.6;
-
-  font-weight: 500;
-}
-
-
-
-/* =========================================================
-   RESULT CARDS
-   ========================================================= */
 
 .result-grid {
   display: grid;
@@ -492,11 +336,6 @@ a:hover {
 }
 
 
-
-/* =========================================================
-   SECTION LINKS
-   ========================================================= */
-
 .section-link {
   margin: 29px 0 0;
 }
@@ -526,16 +365,6 @@ a:hover {
 }
 
 
-.page-kicker {
-  margin: 0 0 7px;
-
-  color: var(--magenta);
-
-  font-size: 16px;
-  font-weight: 600;
-}
-
-
 .page-title {
   margin: 0;
 
@@ -546,18 +375,6 @@ a:hover {
 
   font-weight: 600;
   letter-spacing: -0.025em;
-}
-
-
-.page-description {
-  max-width: 830px;
-
-  margin: 16px 0 0;
-
-  color: var(--muted);
-
-  font-size: 19px;
-  line-height: 1.7;
 }
 
 
@@ -607,7 +424,7 @@ a:hover {
 
 
 .project-meta {
-  margin: 0 0 12px;
+  margin: 0;
 
   color: var(--magenta);
 
@@ -615,11 +432,6 @@ a:hover {
   line-height: 1.5;
 
   font-weight: 600;
-}
-
-
-.research-entry .technical-line {
-  margin-top: 0 !important;
 }
 
 
@@ -631,8 +443,76 @@ a:hover {
 }
 
 
-.research-body .signal-box {
+
+/* =========================================================
+   QUESTION / RESULT BOXES
+   ========================================================= */
+
+.signal-box {
+  position: relative;
+
   margin-top: 23px;
+  padding: 20px 22px 20px 26px;
+
+  background: var(--surface);
+
+  border-left: 3px solid var(--magenta);
+}
+
+
+.signal-box::before,
+.signal-box::after {
+  content: "";
+
+  position: absolute;
+
+  left: -3px;
+
+  width: 14px;
+  height: 3px;
+
+  background: var(--magenta);
+}
+
+
+.signal-box::before {
+  top: 0;
+}
+
+
+.signal-box::after {
+  bottom: 0;
+}
+
+
+.signal-row + .signal-row {
+  margin-top: 17px;
+}
+
+
+.signal-label {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--magenta);
+
+  font-size: 16px;
+  line-height: 1.4;
+
+  font-weight: 600;
+}
+
+
+.signal-text {
+  display: block;
+
+  color: var(--heading);
+
+  font-size: 17.5px;
+  line-height: 1.6;
+
+  font-weight: 500;
 }
 
 
@@ -705,17 +585,6 @@ a:hover {
 }
 
 
-.earlier-label {
-  margin: 52px 0 28px;
-
-  color: var(--heading);
-
-  font-size: 24px;
-
-  font-weight: 600;
-}
-
-
 
 /* =========================================================
    CONTACT
@@ -736,20 +605,6 @@ a:hover {
 }
 
 
-.contact-email {
-  display: inline-block;
-
-  margin-top: 25px;
-  padding-bottom: 3px;
-
-  border-bottom: 2px solid var(--magenta);
-
-  font-size: 25px;
-
-  font-weight: 500;
-}
-
-
 
 /* =========================================================
    FOOTER
@@ -763,33 +618,6 @@ a:hover {
   color: var(--muted);
 
   font-size: 14px;
-}
-
-
-.footer-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  gap: 25px;
-}
-
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 18px;
-}
-
-
-.footer-links a {
-  color: var(--muted);
-}
-
-
-.footer-links a:hover {
-  color: var(--magenta);
 }
 
 
@@ -877,13 +705,6 @@ a:hover {
   }
 
 
-  .flagship-grid {
-    grid-template-columns: 1fr;
-
-    gap: 26px;
-  }
-
-
   .result-grid {
     grid-template-columns: 1fr;
   }
@@ -942,11 +763,6 @@ a:hover {
 
   .contact-copy {
     font-size: 19px;
-  }
-
-
-  .contact-email {
-    font-size: 21px;
   }
 
 }
