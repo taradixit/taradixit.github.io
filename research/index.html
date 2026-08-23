@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Research — Tara Dixit</title>
+
+  <meta
+    name="description"
+    content="Research by Tara Dixit in AI security, empirical security, model reliability, vulnerability intelligence, and security engineering."
+  >
+
+  <link rel="canonical" href="https://taradixit.com/research/">
+
+  <meta name="theme-color" content="#b30d65">
+
+  <link rel="stylesheet" href="/style.css?v=30">
+</head>
+
+
+<body>
+
+  <header class="site-header">
+
+    <div class="site-shell header-row">
+
+      <a class="site-title" href="/">
+        Tara Dixit
+        <span class="site-mark" aria-hidden="true"></span>
+      </a>
+
+
+      <nav class="main-nav">
+
+        <a href="/">Home</a>
+        <a href="/research/" aria-current="page">Research</a>
+        <a href="/publications/">Publications</a>
+        <a href="/contact/">Contact</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <section class="page-hero">
+
+      <div class="site-shell">
+
+        <p class="page-kicker">Work</p>
+
+        <h1 class="page-title">
+          Research
+        </h1>
+
+        <p class="page-description">
+          Projects in AI security, empirical security, model reliability,
+          vulnerability intelligence, and security engineering.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="research-list">
+
+      <div class="site-shell">
+
+
+        <!-- =================================================
+             CONTAINMENTBENCH
+             ================================================= -->
+
+        <article class="research-entry">
+
+          <div>
+
+            <h2>
+              ContainmentBench
+            </h2>
+
+            <p class="project-meta">
+              In progress
+            </p>
+
+            <p class="technical-line">
+              Agent security · Linux · multi-step tasks · containment · policy evaluation
+            </p>
+
+          </div>
+
+
+          <div class="research-body">
+
+            <p>
+              I'm building an evaluation environment to test whether security
+              controls can contain autonomous coding agents across multi-step
+              Linux tasks. The core question is whether actions that are
+              individually allowed can become unsafe when an agent combines
+              them over a longer trajectory.
+            </p>
+
+
+            <div class="signal-box">
+
+              <div class="signal-row">
+
+                <span class="signal-label">Question</span>
+
+                <span class="signal-text">
+                  Can individually allowed actions become unsafe when combined
+                  across a longer trajectory?
+                </span>
+
+              </div>
+
+
+              <div class="signal-row">
+
+                <span class="signal-label">Status</span>
+
+                <span class="signal-text">
+                  In progress
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             EMBER
+             ================================================= -->
+
+        <article class="research-entry">
+
+          <div>
+
+            <h2>
+              Hidden Reliability Failures in Malware Detection
+            </h2>
+
+            <p class="technical-line">
+              1.08M PE files · LightGBM · calibration · family analysis · SHAP
+            </p>
+
+          </div>
+
+
+          <div class="research-body">
+
+            <p>
+              I evaluated the released EMBER2024 LightGBM malware detector on
+              1.08 million Windows PE files. The model reached 98.0% accuracy
+              and 0.0031 ECE overall. When I analyzed results by malware family,
+              some families performed far worse; malicord had 0.602 ECE and an
+              85.2% false-negative rate. The main result was that strong
+              aggregate metrics hid concentrated reliability failures.
+            </p>
+
+
+            <div class="signal-box">
+
+              <div class="signal-row">
+
+                <span class="signal-label">Question</span>
+
+                <span class="signal-text">
+                  Can strong aggregate malware metrics hide security-critical
+                  failures?
+                </span>
+
+              </div>
+
+
+              <div class="signal-row">
+
+                <span class="signal-label">Result</span>
+
+                <span class="signal-text">
+                  98.0% overall accuracy still hid an 85.2% false-negative
+                  rate for malicord.
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             CVE
+             ================================================= -->
+
+        <article class="research-entry">
+
+          <div>
+
+            <h2>
+              Predicting Vulnerability Attributes from CVE Descriptions
+            </h2>
+
+            <p class="technical-line">
+              36,205 held-out 2024 CVEs · TF-IDF · zero-shot 70B+ LLMs · CVSS · CWE
+            </p>
+
+          </div>
+
+
+          <div class="research-body">
+
+            <p>
+              Motivated by
+              <a
+                href="https://www.nist.gov/news-events/news/2026/04/nist-updates-nvd-operations-address-record-cve-growth"
+                target="_blank"
+                rel="noopener noreferrer"
+              >NIST's struggle to keep up with record CVE growth</a>,
+              I built a temporal benchmark using 2022–2023 CVEs for training
+              and 2024 CVEs for testing. From the CVE description alone, I
+              predicted severity, CWE, CVSS score, and vector attributes.
+              TF-IDF baselines scored higher than zero-shot 70B+ models on
+              severity and CWE, while rare classes and attributes that required
+              inference remained difficult.
+            </p>
+
+
+            <div class="signal-box">
+
+              <div class="signal-row">
+
+                <span class="signal-label">Question</span>
+
+                <span class="signal-text">
+                  Do very large language models outperform simpler text models
+                  for CVE enrichment?
+                </span>
+
+              </div>
+
+
+              <div class="signal-row">
+
+                <span class="signal-label">Result</span>
+
+                <span class="signal-text">
+                  TF-IDF reached 67.3% severity and 65.1% CWE accuracy on
+                  36,205 held-out CVEs; Qwen-72B reached 61.1% and 62.1%
+                  on a 500-CVE zero-shot sample.
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             COMPLIANCE
+             ================================================= -->
+
+        <article class="research-entry">
+
+          <div>
+
+            <h2>
+              Compliance Reality Checker
+            </h2>
+
+            <p class="technical-line">
+              Linux · Microsoft 365 · policy checks · account exceptions · runtime state
+            </p>
+
+          </div>
+
+
+          <div class="research-body">
+
+            <p>
+              I built Linux and Microsoft 365 checks to compare declared
+              security configuration with account-level exceptions and runtime
+              state. The checks looked beyond whether a policy existed and
+              tested whether it was actually enforced. The main result was that
+              configured and enforced were not always the same.
+            </p>
+
+
+            <div class="signal-box">
+
+              <div class="signal-row">
+
+                <span class="signal-label">Question</span>
+
+                <span class="signal-text">
+                  Does a control that looks enabled at the configuration level
+                  actually apply in practice?
+                </span>
+
+              </div>
+
+
+              <div class="signal-row">
+
+                <span class="signal-label">Result</span>
+
+                <span class="signal-text">
+                  Global settings could look correct while account exceptions
+                  or runtime state prevented enforcement.
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             TOXICITY
+             ================================================= -->
+
+        <article class="research-entry">
+
+          <div>
+
+            <h2>
+              Validating Toxicity Constructs in Peer Review
+            </h2>
+
+            <p class="project-meta">
+              Stanford Trustworthy AI Research (STAIR) Lab
+            </p>
+
+            <p class="technical-line">
+              200 ICLR 2023 reviews · GPT · Perspective · VADER · Pearson · Spearman
+            </p>
+
+          </div>
+
+
+          <div class="research-body">
+
+            <p>
+              I analyzed 200 ICLR 2023 peer reviews to test whether common
+              toxicity tools capture the kinds of harmful feedback that appear
+              in academic peer review. I compared GPT-based toxicity scores
+              with Perspective and VADER using Pearson and Spearman
+              correlations. The GPT-based measures generally aligned more
+              strongly with VADER's general negativity than with Perspective's
+              web-toxicity score, suggesting that academic toxicity and online
+              toxicity capture different kinds of language.
+            </p>
+
+
+            <div class="signal-box">
+
+              <div class="signal-row">
+
+                <span class="signal-label">Question</span>
+
+                <span class="signal-text">
+                  Do standard web-toxicity tools capture harmful language in
+                  academic peer review?
+                </span>
+
+              </div>
+
+
+              <div class="signal-row">
+
+                <span class="signal-label">Result</span>
+
+                <span class="signal-text">
+                  The GPT-based academic-toxicity scores aligned more strongly
+                  with general negativity than with Perspective's web-toxicity
+                  scores.
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <footer class="site-footer">
+
+    <div class="site-shell footer-row">
+
+      <span>© 2026 Tara Dixit</span>
+
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/research/">Research</a>
+        <a href="/publications/">Publications</a>
+        <a href="/contact/">Contact</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
