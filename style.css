@@ -628,18 +628,8 @@ a:hover {
 
 @media (prefers-reduced-motion: no-preference) {
 
-  .research-entry h2,
   .result-card {
-    transition:
-      color 0.14s ease,
-      transform 0.14s ease;
-  }
-
-
-  .research-entry:hover h2 {
-    color: var(--magenta);
-
-    transform: translateX(2px);
+    transition: transform 0.14s ease;
   }
 
 
