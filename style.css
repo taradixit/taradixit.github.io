@@ -1,17 +1,16 @@
 :root {
-  --background: #fffdfd;
-  --surface: #fff8fb;
-  --surface-strong: #f8e6ef;
+  --background: #fffefe;
+  --surface: #fff9fc;
 
-  --text: #302c30;
-  --heading: #151315;
-  --muted: #756e73;
+  --text: #242124;
+  --heading: #111111;
+  --muted: #746f73;
 
-  --border: #ddd5d9;
-  --border-dark: #aaa2a7;
+  --border: #dedade;
+  --border-dark: #aaa5a8;
 
   --magenta: #b30d65;
-  --magenta-dark: #820849;
+  --magenta-dark: #85094c;
 
   --page-width: 1120px;
 }
@@ -38,28 +37,25 @@ body {
   color: var(--text);
 
   font-family:
-    Menlo,
-    Monaco,
-    Consolas,
-    "Liberation Mono",
+    "Courier New",
+    Courier,
     monospace;
 
-  font-size: 18px;
-  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.5;
 
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 
 ::selection {
-  background: var(--surface-strong);
+  background: #f6e2ed;
   color: var(--heading);
 }
 
 
 .site-shell {
-  width: calc(100% - 80px);
+  width: calc(100% - 30px);
   max-width: var(--page-width);
 
   margin-left: auto;
@@ -69,7 +65,6 @@ body {
 
 a {
   color: var(--magenta);
-
   text-decoration: none;
 }
 
@@ -85,7 +80,7 @@ a:hover {
    ========================================================= */
 
 .site-header {
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 
@@ -94,18 +89,18 @@ a:hover {
   align-items: baseline;
   justify-content: space-between;
 
-  gap: 42px;
+  gap: 40px;
 }
 
 
 .site-title {
   color: var(--heading);
 
-  font-size: 46px;
-  line-height: 1.1;
+  font-size: 40px;
+  line-height: 1;
 
   font-weight: 700;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.04em;
 }
 
 
@@ -123,19 +118,19 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
 
-  gap: 32px;
+  gap: 28px;
 }
 
 
 .main-nav a {
-  padding-bottom: 5px;
+  padding-bottom: 3px;
 
   border-bottom: 2px solid transparent;
 
-  color: #4a4449;
+  color: var(--text);
 
-  font-size: 17px;
-  line-height: 1.4;
+  font-size: 16px;
+  line-height: 1.3;
 
   font-weight: 400;
 }
@@ -155,21 +150,21 @@ a:hover {
    ========================================================= */
 
 .home-hero {
-  padding: 64px 0 58px;
+  padding: 54px 0 48px;
 
   border-bottom: 1px solid var(--border);
 }
 
 
 .home-intro {
-  max-width: 1020px;
+  max-width: 1080px;
 
   margin: 0;
 
   color: var(--heading);
 
-  font-size: 20px;
-  line-height: 1.72;
+  font-size: 18px;
+  line-height: 1.55;
 
   font-weight: 400;
 }
@@ -179,12 +174,12 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
 
-  gap: 12px;
+  gap: 10px;
 
-  margin-top: 28px;
+  margin-top: 27px;
 
-  font-size: 17px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.4;
 
   font-weight: 400;
 }
@@ -201,7 +196,7 @@ a:hover {
    ========================================================= */
 
 .home-section {
-  padding: 58px 0;
+  padding: 50px 0 54px;
 
   border-bottom: 1px solid var(--border);
 }
@@ -212,8 +207,8 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 32px;
-  line-height: 1.25;
+  font-size: 30px;
+  line-height: 1.15;
 
   font-weight: 700;
   letter-spacing: -0.035em;
@@ -226,16 +221,16 @@ a:hover {
   grid-template-columns:
     repeat(3, minmax(0, 1fr));
 
-  gap: 22px;
+  gap: 18px;
 
-  margin-top: 34px;
+  margin-top: 32px;
 }
 
 
 .result-card {
-  min-height: 270px;
+  min-height: 250px;
 
-  padding: 27px;
+  padding: 28px;
 
   background: var(--surface);
 
@@ -245,12 +240,12 @@ a:hover {
 
 
 .result-project {
-  margin: 0 0 14px;
+  margin: 0 0 15px;
 
   color: var(--magenta);
 
   font-size: 14px;
-  line-height: 1.45;
+  line-height: 1.35;
 
   font-weight: 700;
 }
@@ -261,20 +256,20 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 18px;
-  line-height: 1.55;
+  font-size: 17px;
+  line-height: 1.5;
 
   font-weight: 700;
 }
 
 
 .result-card > p:last-of-type {
-  margin: 16px 0 0;
+  margin: 17px 0 0;
 
   color: var(--muted);
 
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.55;
 
   font-weight: 400;
 }
@@ -287,7 +282,7 @@ a:hover {
 
 .mini-figure {
   margin-top: 20px;
-  padding-top: 16px;
+  padding-top: 15px;
 
   border-top: 1px solid var(--border);
 }
@@ -297,27 +292,27 @@ a:hover {
   display: grid;
 
   grid-template-columns:
-    115px
+    105px
     1fr
-    62px;
+    56px;
 
-  gap: 11px;
+  gap: 10px;
 
   align-items: center;
 
-  margin-top: 10px;
+  margin-top: 9px;
 
   font-size: 12px;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 
 .figure-track {
-  height: 8px;
+  height: 7px;
 
   overflow: hidden;
 
-  background: #eee6ea;
+  background: #eee8eb;
 }
 
 
@@ -339,7 +334,7 @@ a:hover {
 
 
 .section-link {
-  margin: 30px 0 0;
+  margin: 27px 0 0;
 }
 
 
@@ -347,7 +342,7 @@ a:hover {
 .artifact-links a {
   display: inline-block;
 
-  padding-bottom: 3px;
+  padding-bottom: 2px;
 
   border-bottom: 1px solid var(--magenta);
 
@@ -357,11 +352,11 @@ a:hover {
 
 
 /* =========================================================
-   INTERIOR PAGE HEADER
+   PAGE HEADERS
    ========================================================= */
 
 .page-hero {
-  padding: 62px 0 44px;
+  padding: 52px 0 38px;
 
   border-bottom: 1px solid var(--border);
 }
@@ -372,8 +367,8 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 34px;
-  line-height: 1.25;
+  font-size: 30px;
+  line-height: 1.15;
 
   font-weight: 700;
   letter-spacing: -0.035em;
@@ -382,11 +377,11 @@ a:hover {
 
 
 /* =========================================================
-   RESEARCH PAGE
+   RESEARCH
    ========================================================= */
 
 .research-list {
-  padding: 54px 0 12px;
+  padding: 46px 0 10px;
 }
 
 
@@ -394,13 +389,13 @@ a:hover {
   display: grid;
 
   grid-template-columns:
-    minmax(270px, 0.72fr)
-    minmax(0, 1.28fr);
+    minmax(245px, 0.68fr)
+    minmax(0, 1.32fr);
 
-  gap: 54px;
+  gap: 45px;
 
-  padding-bottom: 46px;
-  margin-bottom: 46px;
+  padding-bottom: 38px;
+  margin-bottom: 38px;
 
   border-bottom: 1px dashed var(--border-dark);
 }
@@ -414,21 +409,18 @@ a:hover {
 
 
 .research-entry h2 {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
 
   color: var(--heading);
 
-  font-size: 23px;
-  line-height: 1.45;
+  font-size: 20px;
+  line-height: 1.35;
 
   font-weight: 700;
-  letter-spacing: -0.03em;
 }
 
 
-/*
-   No hover styling on research project titles.
-*/
+/* no title movement or color change on hover */
 
 
 .project-meta {
@@ -436,8 +428,8 @@ a:hover {
 
   color: var(--magenta);
 
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.4;
 
   font-weight: 400;
 }
@@ -448,8 +440,8 @@ a:hover {
 
   color: var(--text);
 
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.55;
 
   font-weight: 400;
 }
@@ -457,14 +449,14 @@ a:hover {
 
 
 /* =========================================================
-   QUESTION / RESULT BOXES
+   QUESTION / RESULT
    ========================================================= */
 
 .signal-box {
   position: relative;
 
-  margin-top: 24px;
-  padding: 21px 23px 21px 26px;
+  margin-top: 21px;
+  padding: 19px 21px 19px 23px;
 
   background: var(--surface);
 
@@ -480,7 +472,7 @@ a:hover {
 
   left: -3px;
 
-  width: 14px;
+  width: 13px;
   height: 3px;
 
   background: var(--magenta);
@@ -498,19 +490,19 @@ a:hover {
 
 
 .signal-row + .signal-row {
-  margin-top: 18px;
+  margin-top: 15px;
 }
 
 
 .signal-label {
   display: block;
 
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 
   color: var(--magenta);
 
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 13px;
+  line-height: 1.3;
 
   font-weight: 700;
 }
@@ -521,8 +513,8 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.5;
 
   font-weight: 700;
 }
@@ -534,13 +526,13 @@ a:hover {
    ========================================================= */
 
 .publication-list {
-  padding: 54px 0 14px;
+  padding: 46px 0 10px;
 }
 
 
 .publication-item {
-  padding-bottom: 36px;
-  margin-bottom: 36px;
+  padding-bottom: 31px;
+  margin-bottom: 31px;
 
   border-bottom: 1px dashed var(--border-dark);
 }
@@ -552,39 +544,38 @@ a:hover {
 
 
 .publication-item h2 {
-  margin: 0 0 9px;
+  margin: 0 0 8px;
 
   color: var(--heading);
 
-  font-size: 22px;
-  line-height: 1.5;
+  font-size: 20px;
+  line-height: 1.4;
 
   font-weight: 700;
-  letter-spacing: -0.025em;
 }
 
 
 .publication-meta {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
 
   color: var(--magenta);
 
-  font-size: 15px;
-  line-height: 1.55;
+  font-size: 14px;
+  line-height: 1.4;
 
   font-weight: 400;
 }
 
 
 .publication-item > p:not(.publication-meta) {
-  max-width: 950px;
+  max-width: 1000px;
 
   margin: 0;
 
   color: var(--text);
 
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.55;
 }
 
 
@@ -592,11 +583,11 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
 
-  gap: 18px;
+  gap: 16px;
 
-  margin-top: 18px;
+  margin-top: 15px;
 
-  font-size: 16px;
+  font-size: 15px;
 }
 
 
@@ -606,19 +597,19 @@ a:hover {
    ========================================================= */
 
 .contact-main {
-  padding: 68px 0 120px;
+  padding: 56px 0 100px;
 }
 
 
 .contact-copy {
-  max-width: 900px;
+  max-width: 930px;
 
-  margin: 24px 0 0;
+  margin: 20px 0 0;
 
   color: var(--text);
 
-  font-size: 19px;
-  line-height: 1.75;
+  font-size: 18px;
+  line-height: 1.55;
 }
 
 
@@ -628,34 +619,34 @@ a:hover {
    ========================================================= */
 
 .site-footer {
-  padding: 28px 0 44px;
+  padding: 24px 0 36px;
 
   border-top: 1px solid var(--border);
 
   color: var(--muted);
 
-  font-size: 13px;
+  font-size: 12px;
 }
 
 
 
 /* =========================================================
-   SUBTLE HOME CARD INTERACTION
+   HOME CARD INTERACTION
    ========================================================= */
 
 @media (prefers-reduced-motion: no-preference) {
 
   .result-card {
     transition:
-      transform 0.14s ease,
-      border-color 0.14s ease;
+      transform 0.13s ease,
+      border-color 0.13s ease;
   }
 
 
   .result-card:hover {
     transform: translateY(-2px);
 
-    border-color: #cfc5ca;
+    border-color: #cfc9cc;
     border-top-color: var(--magenta);
   }
 
@@ -670,12 +661,12 @@ a:hover {
 @media (max-width: 850px) {
 
   .site-shell {
-    width: calc(100% - 42px);
+    width: calc(100% - 28px);
   }
 
 
   .site-header {
-    padding-top: 28px;
+    padding-top: 18px;
   }
 
 
@@ -683,37 +674,43 @@ a:hover {
     align-items: flex-start;
     flex-direction: column;
 
-    gap: 24px;
+    gap: 22px;
   }
 
 
   .site-title {
-    font-size: 38px;
+    font-size: 34px;
   }
 
 
   .main-nav {
-    gap: 20px;
+    gap: 18px;
   }
 
 
   .main-nav a {
-    font-size: 15px;
+    font-size: 14px;
   }
 
 
   .home-hero {
-    padding: 47px 0 45px;
+    padding: 43px 0 41px;
   }
 
 
   .home-intro {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.55;
   }
 
 
   .profile-links {
-    font-size: 15px;
+    font-size: 14px;
+  }
+
+
+  .home-section {
+    padding: 43px 0;
   }
 
 
@@ -728,58 +725,58 @@ a:hover {
 
 
   .page-hero {
-    padding: 46px 0 37px;
+    padding: 42px 0 32px;
   }
 
 
   .page-title,
   .home-section-title {
-    font-size: 29px;
+    font-size: 26px;
   }
 
 
   .research-entry {
     grid-template-columns: 1fr;
 
-    gap: 19px;
+    gap: 17px;
 
-    padding-bottom: 36px;
-    margin-bottom: 36px;
+    padding-bottom: 31px;
+    margin-bottom: 31px;
   }
 
 
   .research-entry h2 {
-    font-size: 21px;
+    font-size: 18px;
   }
 
 
   .research-body > p {
-    font-size: 16px;
-  }
-
-
-  .signal-text {
     font-size: 15px;
   }
 
 
+  .signal-text {
+    font-size: 14px;
+  }
+
+
   .publication-item h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
 
   .publication-item > p:not(.publication-meta) {
-    font-size: 16px;
+    font-size: 15px;
   }
 
 
   .contact-main {
-    padding: 52px 0 90px;
+    padding: 45px 0 80px;
   }
 
 
   .contact-copy {
-    font-size: 17px;
+    font-size: 16px;
   }
 
 }
