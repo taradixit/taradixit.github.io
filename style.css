@@ -41,8 +41,8 @@ body {
     "JetBrains Mono",
     monospace;
 
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.55;
 
   font-weight: 400;
 
@@ -105,12 +105,12 @@ a:hover {
 .site-title {
   color: var(--heading);
 
-  font-size: 40px;
+  font-size: 34px;
   line-height: 1;
 
-  font-weight: 800;
+  font-weight: 700;
 
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 
@@ -139,7 +139,7 @@ a:hover {
 
   color: #454145;
 
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.3;
 
   font-weight: 500;
@@ -173,8 +173,8 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.55;
 
   font-weight: 400;
 }
@@ -188,7 +188,7 @@ a:hover {
 
   margin-top: 34px;
 
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.4;
 
   font-weight: 500;
@@ -217,12 +217,12 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1.15;
 
-  font-weight: 800;
+  font-weight: 700;
 
-  letter-spacing: -0.025em;
+  letter-spacing: -0.015em;
 }
 
 
@@ -260,7 +260,7 @@ a:hover {
 
   color: var(--magenta);
 
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.4;
 
   font-weight: 700;
@@ -272,10 +272,10 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.5;
 
-  font-weight: 800;
+  font-weight: 700;
 }
 
 
@@ -284,7 +284,7 @@ a:hover {
 
   color: var(--muted);
 
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
 
   font-weight: 400;
@@ -318,7 +318,7 @@ a:hover {
 
   margin-top: 10px;
 
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.3;
 }
 
@@ -383,12 +383,12 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1.15;
 
-  font-weight: 800;
+  font-weight: 700;
 
-  letter-spacing: -0.025em;
+  letter-spacing: -0.015em;
 }
 
 
@@ -430,12 +430,12 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 19px;
+  font-size: 17px;
   line-height: 1.4;
 
-  font-weight: 800;
+  font-weight: 700;
 
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
 }
 
 
@@ -450,7 +450,7 @@ a:hover {
 
   color: var(--magenta);
 
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.45;
 
   font-weight: 600;
@@ -462,7 +462,7 @@ a:hover {
 
   color: var(--text);
 
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
 
   font-weight: 400;
@@ -524,7 +524,7 @@ a:hover {
 
   color: var(--magenta);
 
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.3;
 
   font-weight: 700;
@@ -536,7 +536,7 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.5;
 
   font-weight: 600;
@@ -571,12 +571,12 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 19px;
+  font-size: 17px;
   line-height: 1.4;
 
-  font-weight: 800;
+  font-weight: 700;
 
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
 }
 
 
@@ -585,7 +585,7 @@ a:hover {
 
   color: var(--magenta);
 
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.45;
 
   font-weight: 600;
@@ -599,7 +599,7 @@ a:hover {
 
   color: var(--text);
 
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
 
   font-weight: 400;
@@ -614,7 +614,7 @@ a:hover {
 
   margin-top: 18px;
 
-  font-size: 15px;
+  font-size: 14px;
 }
 
 
@@ -635,7 +635,7 @@ a:hover {
 
   color: var(--text);
 
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.6;
 
   font-weight: 400;
@@ -654,7 +654,7 @@ a:hover {
 
   color: var(--muted);
 
-  font-size: 12px;
+  font-size: 11px;
 }
 
 
@@ -708,7 +708,7 @@ a:hover {
 
 
   .site-title {
-    font-size: 32px;
+    font-size: 28px;
   }
 
 
@@ -718,7 +718,7 @@ a:hover {
 
 
   .main-nav a {
-    font-size: 14px;
+    font-size: 13px;
   }
 
 
@@ -728,13 +728,13 @@ a:hover {
 
 
   .home-intro {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.55;
   }
 
 
   .profile-links {
-    font-size: 14px;
+    font-size: 13px;
   }
 
 
@@ -745,7 +745,7 @@ a:hover {
 
   .home-section-title,
   .page-title {
-    font-size: 24px;
+    font-size: 21px;
   }
 
 
@@ -775,27 +775,27 @@ a:hover {
 
 
   .research-entry h2 {
-    font-size: 17px;
+    font-size: 15px;
   }
 
 
   .research-body > p {
-    font-size: 14px;
+    font-size: 13px;
   }
 
 
   .signal-text {
-    font-size: 14px;
+    font-size: 13px;
   }
 
 
   .publication-item h2 {
-    font-size: 17px;
+    font-size: 15px;
   }
 
 
   .publication-item > p:not(.publication-meta) {
-    font-size: 14px;
+    font-size: 13px;
   }
 
 
@@ -805,7 +805,7 @@ a:hover {
 
 
   .contact-copy {
-    font-size: 15px;
+    font-size: 14px;
   }
 
 }
