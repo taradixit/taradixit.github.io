@@ -1,20 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
-
-
 :root {
   --background: #fffdfd;
-  --surface: #fff7fb;
+  --surface: #fff8fb;
   --surface-strong: #f8e6ef;
 
-  --text: #332e32;
-  --heading: #171417;
-  --muted: #746d72;
+  --text: #302c30;
+  --heading: #151315;
+  --muted: #756e73;
 
-  --border: #ddd4d9;
-  --border-dark: #aea5aa;
+  --border: #ddd5d9;
+  --border-dark: #aaa2a7;
 
   --magenta: #b30d65;
-  --magenta-dark: #830849;
+  --magenta-dark: #820849;
 
   --page-width: 1120px;
 }
@@ -41,14 +38,17 @@ body {
   color: var(--text);
 
   font-family:
-    "Space Mono",
-    "Courier New",
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
     monospace;
 
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.65;
 
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 
@@ -85,7 +85,7 @@ a:hover {
    ========================================================= */
 
 .site-header {
-  padding-top: 42px;
+  padding-top: 40px;
 }
 
 
@@ -101,11 +101,11 @@ a:hover {
 .site-title {
   color: var(--heading);
 
-  font-size: 48px;
+  font-size: 46px;
   line-height: 1.1;
 
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.045em;
 }
 
 
@@ -123,16 +123,16 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
 
-  gap: 30px;
+  gap: 32px;
 }
 
 
 .main-nav a {
-  padding-bottom: 4px;
+  padding-bottom: 5px;
 
   border-bottom: 2px solid transparent;
 
-  color: #484247;
+  color: #4a4449;
 
   font-size: 17px;
   line-height: 1.4;
@@ -155,21 +155,21 @@ a:hover {
    ========================================================= */
 
 .home-hero {
-  padding: 70px 0 62px;
+  padding: 64px 0 58px;
 
   border-bottom: 1px solid var(--border);
 }
 
 
 .home-intro {
-  max-width: 1000px;
+  max-width: 1020px;
 
   margin: 0;
 
   color: var(--heading);
 
-  font-size: 21px;
-  line-height: 1.75;
+  font-size: 20px;
+  line-height: 1.72;
 
   font-weight: 400;
 }
@@ -181,7 +181,7 @@ a:hover {
 
   gap: 12px;
 
-  margin-top: 29px;
+  margin-top: 28px;
 
   font-size: 17px;
   line-height: 1.5;
@@ -201,7 +201,7 @@ a:hover {
    ========================================================= */
 
 .home-section {
-  padding: 62px 0;
+  padding: 58px 0;
 
   border-bottom: 1px solid var(--border);
 }
@@ -212,7 +212,7 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 34px;
+  font-size: 32px;
   line-height: 1.25;
 
   font-weight: 700;
@@ -226,31 +226,31 @@ a:hover {
   grid-template-columns:
     repeat(3, minmax(0, 1fr));
 
-  gap: 24px;
+  gap: 22px;
 
-  margin-top: 36px;
+  margin-top: 34px;
 }
 
 
 .result-card {
-  min-height: 285px;
+  min-height: 270px;
 
-  padding: 25px;
+  padding: 27px;
 
   background: var(--surface);
 
+  border: 1px solid var(--border);
   border-top: 3px solid var(--magenta);
-  border-bottom: 1px solid var(--border);
 }
 
 
 .result-project {
-  margin: 0 0 13px;
+  margin: 0 0 14px;
 
   color: var(--magenta);
 
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.45;
 
   font-weight: 700;
 }
@@ -261,7 +261,7 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.55;
 
   font-weight: 700;
@@ -269,12 +269,14 @@ a:hover {
 
 
 .result-card > p:last-of-type {
-  margin: 15px 0 0;
+  margin: 16px 0 0;
 
   color: var(--muted);
 
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.65;
+
+  font-weight: 400;
 }
 
 
@@ -284,8 +286,8 @@ a:hover {
    ========================================================= */
 
 .mini-figure {
-  margin-top: 21px;
-  padding-top: 17px;
+  margin-top: 20px;
+  padding-top: 16px;
 
   border-top: 1px solid var(--border);
 }
@@ -311,7 +313,7 @@ a:hover {
 
 
 .figure-track {
-  height: 9px;
+  height: 8px;
 
   overflow: hidden;
 
@@ -337,7 +339,7 @@ a:hover {
 
 
 .section-link {
-  margin: 31px 0 0;
+  margin: 30px 0 0;
 }
 
 
@@ -349,7 +351,7 @@ a:hover {
 
   border-bottom: 1px solid var(--magenta);
 
-  font-weight: 700;
+  font-weight: 400;
 }
 
 
@@ -359,7 +361,7 @@ a:hover {
    ========================================================= */
 
 .page-hero {
-  padding: 67px 0 48px;
+  padding: 62px 0 44px;
 
   border-bottom: 1px solid var(--border);
 }
@@ -370,7 +372,7 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 36px;
+  font-size: 34px;
   line-height: 1.25;
 
   font-weight: 700;
@@ -384,7 +386,7 @@ a:hover {
    ========================================================= */
 
 .research-list {
-  padding: 58px 0 12px;
+  padding: 54px 0 12px;
 }
 
 
@@ -395,10 +397,10 @@ a:hover {
     minmax(270px, 0.72fr)
     minmax(0, 1.28fr);
 
-  gap: 58px;
+  gap: 54px;
 
-  padding-bottom: 49px;
-  margin-bottom: 49px;
+  padding-bottom: 46px;
+  margin-bottom: 46px;
 
   border-bottom: 1px dashed var(--border-dark);
 }
@@ -416,17 +418,16 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 24px;
+  font-size: 23px;
   line-height: 1.45;
 
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
 }
 
 
 /*
-   Research titles intentionally have NO hover
-   color or movement.
+   No hover styling on research project titles.
 */
 
 
@@ -436,17 +437,19 @@ a:hover {
   color: var(--magenta);
 
   font-size: 15px;
-  line-height: 1.55;
+  line-height: 1.5;
 
-  font-weight: 700;
+  font-weight: 400;
 }
 
 
 .research-body > p {
   margin: 0;
 
+  color: var(--text);
+
   font-size: 17px;
-  line-height: 1.85;
+  line-height: 1.75;
 
   font-weight: 400;
 }
@@ -460,8 +463,8 @@ a:hover {
 .signal-box {
   position: relative;
 
-  margin-top: 25px;
-  padding: 21px 23px 21px 27px;
+  margin-top: 24px;
+  padding: 21px 23px 21px 26px;
 
   background: var(--surface);
 
@@ -519,7 +522,7 @@ a:hover {
   color: var(--heading);
 
   font-size: 16px;
-  line-height: 1.65;
+  line-height: 1.6;
 
   font-weight: 700;
 }
@@ -531,13 +534,13 @@ a:hover {
    ========================================================= */
 
 .publication-list {
-  padding: 56px 0 14px;
+  padding: 54px 0 14px;
 }
 
 
 .publication-item {
-  padding-bottom: 38px;
-  margin-bottom: 38px;
+  padding-bottom: 36px;
+  margin-bottom: 36px;
 
   border-bottom: 1px dashed var(--border-dark);
 }
@@ -553,7 +556,7 @@ a:hover {
 
   color: var(--heading);
 
-  font-size: 23px;
+  font-size: 22px;
   line-height: 1.5;
 
   font-weight: 700;
@@ -569,7 +572,7 @@ a:hover {
   font-size: 15px;
   line-height: 1.55;
 
-  font-weight: 700;
+  font-weight: 400;
 }
 
 
@@ -578,8 +581,10 @@ a:hover {
 
   margin: 0;
 
+  color: var(--text);
+
   font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
 
@@ -601,17 +606,19 @@ a:hover {
    ========================================================= */
 
 .contact-main {
-  padding: 72px 0 120px;
+  padding: 68px 0 120px;
 }
 
 
 .contact-copy {
   max-width: 900px;
 
-  margin: 25px 0 0;
+  margin: 24px 0 0;
+
+  color: var(--text);
 
   font-size: 19px;
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
 
@@ -621,7 +628,7 @@ a:hover {
    ========================================================= */
 
 .site-footer {
-  padding: 30px 0 45px;
+  padding: 28px 0 44px;
 
   border-top: 1px solid var(--border);
 
@@ -633,18 +640,23 @@ a:hover {
 
 
 /* =========================================================
-   HOME CARD INTERACTION
+   SUBTLE HOME CARD INTERACTION
    ========================================================= */
 
 @media (prefers-reduced-motion: no-preference) {
 
   .result-card {
-    transition: transform 0.14s ease;
+    transition:
+      transform 0.14s ease,
+      border-color 0.14s ease;
   }
 
 
   .result-card:hover {
     transform: translateY(-2px);
+
+    border-color: #cfc5ca;
+    border-top-color: var(--magenta);
   }
 
 }
@@ -663,7 +675,7 @@ a:hover {
 
 
   .site-header {
-    padding-top: 29px;
+    padding-top: 28px;
   }
 
 
@@ -671,7 +683,7 @@ a:hover {
     align-items: flex-start;
     flex-direction: column;
 
-    gap: 25px;
+    gap: 24px;
   }
 
 
@@ -691,7 +703,7 @@ a:hover {
 
 
   .home-hero {
-    padding: 49px 0 47px;
+    padding: 47px 0 45px;
   }
 
 
@@ -716,7 +728,7 @@ a:hover {
 
 
   .page-hero {
-    padding: 48px 0 39px;
+    padding: 46px 0 37px;
   }
 
 
@@ -729,10 +741,10 @@ a:hover {
   .research-entry {
     grid-template-columns: 1fr;
 
-    gap: 20px;
+    gap: 19px;
 
-    padding-bottom: 37px;
-    margin-bottom: 37px;
+    padding-bottom: 36px;
+    margin-bottom: 36px;
   }
 
 
@@ -752,7 +764,7 @@ a:hover {
 
 
   .publication-item h2 {
-    font-size: 21px;
+    font-size: 20px;
   }
 
 
@@ -762,7 +774,7 @@ a:hover {
 
 
   .contact-main {
-    padding: 53px 0 90px;
+    padding: 52px 0 90px;
   }
 
 
