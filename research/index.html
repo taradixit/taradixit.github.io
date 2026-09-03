@@ -15,7 +15,7 @@
   <link rel="canonical" href="https://taradixit.com/research/">
   <meta name="theme-color" content="#b30d65">
 
-  <link rel="stylesheet" href="/style.css?v=31">
+  <link rel="stylesheet" href="/style.css?v=33">
   <link rel="icon" href="/assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -204,19 +204,37 @@
           <div class="research-body">
 
             <p>
-              Motivated by
-              
-                href="https://www.nist.gov/news-events/news/2026/04/nist-updates-nvd-operations-address-record-cve-growth"
+              I built a reproducible baseline that predicts severity, CWE,
+              CVSS score, and eight vector components from CVE descriptions.
+              It trains on records published in 2022 and 2023 and tests on
+              36,539 records published in 2024. I also tested how the results
+              change with split design, duplicates, label frequency, and
+              similarity to the training data.
+            </p>
+
+            <p>
+              TF-IDF reached 66.05% four-class severity accuracy, 67.15%
+              closed-set CWE accuracy, 0.997 CVSS mean absolute error, and
+              86.13% average component accuracy. The aggregate scores were
+              incomplete: LOW-severity recall was zero, and unseen CWEs and
+              labels seen one to nine times in training had zero original-label
+              recovery. Predicted score and severity also disagreed on 19.63%
+              of test records. I see the model as a baseline or decision-support
+              system, not a replacement for security analysts.
+            </p>
+
+            <div class="artifact-links">
+              <a
+                href="https://github.com/taradixit/cve-enrichment-project"
                 target="_blank"
                 rel="noopener noreferrer"
-              >NIST's struggle to keep up with record CVE growth</a>,
-              I built a temporal benchmark using 2022–2023 CVEs for training
-              and 2024 CVEs for testing. From the CVE description alone, I
-              predicted severity, CWE, CVSS score, and vector attributes.
-              TF-IDF baselines scored higher than zero-shot 70B+ models on
-              severity and CWE, while rare classes and attributes that required
-              inference remained difficult.
-            </p>
+              >Code</a>
+              <a
+                href="/assets/CVE_Enrichment_Under_Distribution_Shift.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Paper</a>
+            </div>
 
 
             <div class="signal-box">
@@ -226,8 +244,8 @@
                 <span class="signal-label">Question</span>
 
                 <span class="signal-text">
-                  Do very large language models outperform simpler text models
-                  for CVE enrichment?
+                  How reliably can lexical models reconstruct CVE enrichment
+                  fields under publication-year distribution shift?
                 </span>
 
               </div>
@@ -238,9 +256,8 @@
                 <span class="signal-label">Result</span>
 
                 <span class="signal-text">
-                  TF-IDF reached 67.3% severity and 65.1% CWE accuracy on
-                  36,205 held-out CVEs; Qwen-72B reached 61.1% and 62.1%
-                  on a 500-CVE zero-shot sample.
+                  Common fields were often recoverable, but aggregate metrics
+                  hid rare-label failures and cross-field contradictions.
                 </span>
 
               </div>
