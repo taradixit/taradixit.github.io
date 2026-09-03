@@ -15,7 +15,7 @@
   <link rel="canonical" href="https://taradixit.com/research/">
   <meta name="theme-color" content="#b30d65">
 
-  <link rel="stylesheet" href="/style.css?v=34">
+  <link rel="stylesheet" href="/style.css?v=35">
   <link rel="icon" href="/assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -148,12 +148,31 @@
 
             <p>
               I evaluated the released EMBER2024 LightGBM malware detector on
-              1.08 million Windows PE files. The model reached 98.0% accuracy
-              and 0.0031 ECE overall. When I analyzed results by malware family,
-              some families performed far worse; malicord had 0.602 ECE and an
-              85.2% false-negative rate. The main result was that strong
-              aggregate metrics hid concentrated reliability failures.
+              540,000 Windows PE records without retraining or recalibrating it.
+              The model reached 98.0% accuracy, 0.9982 ROC AUC, and 0.0031 ECE
+              overall. Those numbers suggest a highly reliable detector.
             </p>
+
+            <p>
+              Slice-level evaluation changed the picture. Malicord had a 0.602
+              ECE and an 85.2% false-negative rate. Lazzzy and rugmi also had
+              false-negative rates above 61%. This is a concrete evaluation
+              failure mode: strong population metrics can miss concentrated
+              errors in smaller groups.
+            </p>
+
+            <div class="artifact-links">
+              <a
+                href="https://github.com/taradixit/ember-family-calibration"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Code</a>
+              <a
+                href="https://github.com/taradixit/ember-family-calibration/blob/main/paper/EMBER2024_Family_Calibration.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Paper</a>
+            </div>
 
 
             <div class="signal-box">
@@ -182,6 +201,80 @@
               </div>
 
             </div>
+
+
+            <figure class="similarity-chart family-chart">
+
+              <figcaption>
+                <strong>Aggregate reliability hid family-level failures</strong>
+                <span>
+                  False-negative rate and 15-bin ECE for three malware families.
+                </span>
+              </figcaption>
+
+              <div class="chart-legend" aria-label="Chart legend">
+                <span><i class="legend-fnr"></i>False-negative rate</span>
+                <span><i class="legend-ece"></i>ECE</span>
+              </div>
+
+              <div class="similarity-band">
+                <div class="band-label">
+                  <strong>malicord</strong>
+                  <span>162 malicious records</span>
+                </div>
+                <div class="band-bars">
+                  <div class="bar-row">
+                    <div class="bar-track"><div class="bar-fill fnr-bar" style="width: 85.1852%"></div></div>
+                    <span>85.2%</span>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-track"><div class="bar-fill ece-bar" style="width: 60.2358%"></div></div>
+                    <span>0.602</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="similarity-band">
+                <div class="band-label">
+                  <strong>lazzzy</strong>
+                  <span>179 malicious records</span>
+                </div>
+                <div class="band-bars">
+                  <div class="bar-row">
+                    <div class="bar-track"><div class="bar-fill fnr-bar" style="width: 62.0112%"></div></div>
+                    <span>62.0%</span>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-track"><div class="bar-fill ece-bar" style="width: 45.205%"></div></div>
+                    <span>0.452</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="similarity-band">
+                <div class="band-label">
+                  <strong>rugmi</strong>
+                  <span>256 malicious records</span>
+                </div>
+                <div class="band-bars">
+                  <div class="bar-row">
+                    <div class="bar-track"><div class="bar-fill fnr-bar" style="width: 61.7188%"></div></div>
+                    <span>61.7%</span>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-track"><div class="bar-fill ece-bar" style="width: 44.72%"></div></div>
+                    <span>0.447</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="chart-note">
+                ECE is the average confidence gap within each malicious-only
+                family. These results are descriptive and do not show why the
+                errors occur.
+              </p>
+
+            </figure>
 
 
           </div>

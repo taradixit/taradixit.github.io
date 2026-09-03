@@ -609,13 +609,17 @@ a:hover {
 
 
 .legend-severity,
-.severity-bar {
+.severity-bar,
+.legend-fnr,
+.fnr-bar {
   background: var(--magenta);
 }
 
 
 .legend-cwe,
-.cwe-bar {
+.cwe-bar,
+.legend-ece,
+.ece-bar {
   background: #625a5f;
 }
 
