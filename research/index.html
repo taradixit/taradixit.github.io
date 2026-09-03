@@ -543,7 +543,7 @@
           <div>
 
             <h2>
-              Validating Toxicity Constructs in Peer Review
+              Context-Aware AI for Constructive Peer Review
             </h2>
 
             <p class="project-meta">
@@ -556,15 +556,25 @@
           <div class="research-body">
 
             <p>
-              I analyzed 200 ICLR 2023 peer reviews to test whether common
-              toxicity tools capture the kinds of harmful feedback that appear
-              in academic peer review. I compared GPT-based toxicity scores
-              with Perspective and VADER using Pearson and Spearman
-              correlations. The GPT-based measures generally aligned more
-              strongly with VADER's general negativity than with Perspective's
-              web-toxicity score, suggesting that academic toxicity and online
-              toxicity capture different kinds of language.
+              I studied whether standard toxicity detectors capture the kinds
+              of harmful language that appear in academic peer review. Using
+              nearly 1000 ICLR 2023 reviews, I compared GPT-based measures of
+              emotive tone, lack of constructive feedback, personal attacks,
+              and speculation with VADER sentiment scores and Perspective
+              web-toxicity scores. Pearson and Spearman correlations showed
+              that these academic-toxicity measures aligned more closely with
+              general negative sentiment than with conventional web toxicity,
+              suggesting that harmful academic feedback has context-specific
+              characteristics that standard toxicity detectors may miss.
             </p>
+
+            <div class="artifact-links">
+              <a
+                href="/assets/Context-Aware_AI_for_Constructive_Peer_Review.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Slides</a>
+            </div>
 
 
             <div class="signal-box">
@@ -574,8 +584,8 @@
                 <span class="signal-label">Question</span>
 
                 <span class="signal-text">
-                  Do standard web-toxicity tools capture harmful language in
-                  academic peer review?
+                  Can standard web-toxicity tools capture the kinds of harmful
+                  language that appear in academic peer review?
                 </span>
 
               </div>
@@ -586,9 +596,10 @@
                 <span class="signal-label">Result</span>
 
                 <span class="signal-text">
-                  The GPT-based academic-toxicity scores aligned more strongly
-                  with general negativity than with Perspective's web-toxicity
-                  scores.
+                  Academic-toxicity measures aligned more strongly with general
+                  negative sentiment than with web-toxicity scores, suggesting
+                  that harmful academic feedback is not well represented by
+                  web-toxicity signals alone.
                 </span>
 
               </div>
