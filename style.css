@@ -549,6 +549,150 @@ a:hover {
 }
 
 
+/* =========================================================
+   CVE SIMILARITY CHART
+   ========================================================= */
+
+.similarity-chart {
+  margin: 28px 0 0;
+  padding: 24px;
+
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+
+.similarity-chart figcaption strong,
+.similarity-chart figcaption span {
+  display: block;
+}
+
+
+.similarity-chart figcaption strong {
+  color: var(--heading);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+
+.similarity-chart figcaption span {
+  margin-top: 5px;
+
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+.chart-legend {
+  display: flex;
+  gap: 18px;
+
+  margin-top: 18px;
+
+  color: var(--muted);
+  font-size: 11px;
+}
+
+
+.chart-legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.chart-legend i {
+  width: 12px;
+  height: 7px;
+}
+
+
+.legend-severity,
+.severity-bar {
+  background: var(--magenta);
+}
+
+
+.legend-cwe,
+.cwe-bar {
+  background: #625a5f;
+}
+
+
+.similarity-band {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+
+  margin-top: 17px;
+}
+
+
+.band-label strong,
+.band-label span {
+  display: block;
+}
+
+
+.band-label strong {
+  color: var(--heading);
+  font-size: 11px;
+}
+
+
+.band-label span {
+  margin-top: 2px;
+
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+
+.bar-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 46px;
+  gap: 8px;
+  align-items: center;
+}
+
+
+.bar-row + .bar-row {
+  margin-top: 5px;
+}
+
+
+.bar-track {
+  height: 8px;
+
+  overflow: hidden;
+  background: #eee8eb;
+}
+
+
+.bar-fill {
+  height: 100%;
+}
+
+
+.bar-row > span {
+  color: var(--heading);
+  font-size: 10px;
+  text-align: right;
+}
+
+
+.chart-note {
+  margin: 20px 0 0;
+
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+
 
 /* =========================================================
    PUBLICATIONS
