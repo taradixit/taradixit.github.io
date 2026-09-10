@@ -40,7 +40,7 @@
     }
 
     if (toggleLabel) {
-      toggleLabel.textContent = isDark ? "light" : "dark";
+      toggleLabel.textContent = isDark ? "Light" : "Dark";
     }
 
     if (themeColor) {
