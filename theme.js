@@ -17,6 +17,8 @@
   const applyTheme = (theme, persist = false) => {
     const isDark = theme === "dark";
     const toggle = document.querySelector("[data-theme-toggle]");
+    const toggleIcon = toggle?.querySelector("[data-theme-icon]");
+    const toggleLabel = toggle?.querySelector("[data-theme-label]");
     const themeColor = document.querySelector('meta[name="theme-color"]');
 
     if (isDark) {
@@ -26,12 +28,19 @@
     }
 
     if (toggle) {
-      toggle.textContent = isDark ? "Light" : "Dark";
       toggle.setAttribute("aria-pressed", String(isDark));
       toggle.setAttribute(
         "aria-label",
         isDark ? "Switch to light mode" : "Switch to dark mode"
       );
+    }
+
+    if (toggleIcon) {
+      toggleIcon.textContent = isDark ? "☀" : "☾";
+    }
+
+    if (toggleLabel) {
+      toggleLabel.textContent = isDark ? "light" : "dark";
     }
 
     if (themeColor) {
