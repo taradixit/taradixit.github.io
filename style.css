@@ -4,16 +4,52 @@
 :root {
   --background: #fffefe;
   --surface: #fff9fc;
+  --chart-surface: #fff;
+  --metric-surface: rgba(255, 255, 255, 0.82);
+  --track: #eee8eb;
+  --secondary-bar: #625a5f;
 
   --text: #1f1d1f;
   --heading: #080808;
   --muted: #777174;
+  --nav: #454145;
+  --separator: #aaa5a8;
 
   --border: #dedde0;
   --border-dark: #aaa6a9;
+  --card-hover-border: #ccc8cb;
 
   --magenta: #b30d65;
   --magenta-dark: #85094c;
+  --selection: #f5ddea;
+
+  color-scheme: light;
+}
+
+
+:root[data-theme="dark"] {
+  --background: #111012;
+  --surface: #1a171a;
+  --chart-surface: #171417;
+  --metric-surface: rgba(31, 27, 31, 0.9);
+  --track: #332d31;
+  --secondary-bar: #9b9096;
+
+  --text: #ded7db;
+  --heading: #fffafd;
+  --muted: #aaa1a6;
+  --nav: #d4ccd1;
+  --separator: #6f666b;
+
+  --border: #3c353a;
+  --border-dark: #675c62;
+  --card-hover-border: #665a61;
+
+  --magenta: #ef5da8;
+  --magenta-dark: #ff8bc4;
+  --selection: #633049;
+
+  color-scheme: dark;
 }
 
 
@@ -53,7 +89,7 @@ body {
 
 
 ::selection {
-  background: #f5ddea;
+  background: var(--selection);
   color: var(--heading);
 }
 
@@ -138,7 +174,7 @@ a:hover {
 
   border-bottom: 2px solid transparent;
 
-  color: #454145;
+  color: var(--nav);
 
   font-size: 14px;
   line-height: 1.3;
@@ -152,6 +188,36 @@ a:hover {
   color: var(--magenta);
 
   border-bottom-color: var(--magenta);
+}
+
+
+.theme-toggle {
+  appearance: none;
+
+  padding: 0 0 5px;
+
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--nav);
+
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+
+.theme-toggle:hover {
+  color: var(--magenta);
+  border-bottom-color: var(--magenta);
+}
+
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--magenta);
+  outline-offset: 4px;
 }
 
 
@@ -197,7 +263,7 @@ a:hover {
 
 
 .profile-links span {
-  color: #aaa5a8;
+  color: var(--separator);
 }
 
 
@@ -329,7 +395,7 @@ a:hover {
 
   overflow: hidden;
 
-  background: #eee8eb;
+  background: var(--track);
 }
 
 
@@ -557,7 +623,7 @@ a:hover {
   margin: 28px 0 0;
   padding: 24px;
 
-  background: #fff;
+  background: var(--chart-surface);
   border: 1px solid var(--border);
 }
 
@@ -616,7 +682,7 @@ a:hover {
 
 .legend-cwe,
 .cwe-bar {
-  background: #625a5f;
+  background: var(--secondary-bar);
 }
 
 
@@ -668,7 +734,7 @@ a:hover {
   height: 8px;
 
   overflow: hidden;
-  background: #eee8eb;
+  background: var(--track);
 }
 
 
@@ -704,7 +770,7 @@ a:hover {
   padding: 28px;
 
   overflow: hidden;
-  background: #fff;
+  background: var(--chart-surface);
   border: 1px solid var(--border);
 }
 
@@ -751,7 +817,7 @@ a:hover {
 .contrast-metric {
   padding: 17px 18px;
 
-  background: rgba(255, 255, 255, 0.82);
+  background: var(--metric-surface);
   border: 1px solid var(--border);
 }
 
@@ -847,7 +913,7 @@ a:hover {
   aspect-ratio: 1;
   margin: 0 auto;
 
-  background: conic-gradient(var(--magenta) var(--value), #eee8eb 0);
+  background: conic-gradient(var(--magenta) var(--value), var(--track) 0);
   border-radius: 50%;
 }
 
@@ -857,7 +923,7 @@ a:hover {
   inset: 9px;
 
   content: "";
-  background: #fff;
+  background: var(--chart-surface);
   border-radius: 50%;
 }
 
@@ -1026,7 +1092,7 @@ a:hover {
   .result-card:hover {
     transform: translateY(-2px);
 
-    border-color: #ccc8cb;
+    border-color: var(--card-hover-border);
     border-top-color: var(--magenta);
   }
 
@@ -1069,6 +1135,11 @@ a:hover {
 
 
   .main-nav a {
+    font-size: 13px;
+  }
+
+
+  .theme-toggle {
     font-size: 13px;
   }
 
