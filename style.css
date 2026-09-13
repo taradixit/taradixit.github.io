@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap");
-
-
 :root {
   --background: #fffefe;
   --surface: #fff9fc;
@@ -74,8 +71,11 @@ body {
   color: var(--text);
 
   font-family:
-    "JetBrains Mono",
-    monospace;
+    "Tiempos Text",
+    Tiempos,
+    Georgia,
+    "Times New Roman",
+    serif;
 
   font-size: 16px;
   line-height: 1.55;
