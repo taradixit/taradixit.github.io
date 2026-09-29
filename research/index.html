@@ -95,11 +95,19 @@
           <div class="research-body">
 
             <p>
-              I'm building an evaluation environment to test whether security
-              controls can contain autonomous coding agents across multi-step
-              Linux tasks. The core question is whether actions that are
-              individually allowed can become unsafe when an agent combines
-              them over a longer trajectory.
+              I built ContainmentBench to test whether simple Linux controls can
+              keep a coding agent inside clearly defined boundaries. It runs 19
+              scripted scenarios in a weak baseline and a contained Docker
+              environment, then records command outcomes, security events, and
+              post-run invariant checks.
+            </p>
+
+            <p>
+              The contained environment uses a non-root user, restricted mounts,
+              a read-only filesystem, dropped capabilities, seccomp, process and
+              memory limits, and an isolated network. The baseline violated an
+              invariant in all 13 adversarial scenarios. Containment blocked every
+              forbidden action without breaking normal tasks.
             </p>
 
 
